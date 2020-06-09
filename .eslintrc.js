@@ -2,7 +2,9 @@ module.exports = {
     "env": {
         "browser": true,
         "amd": true,
-        "jquery": true
+        "jquery": true,
+        "cypress/globals": true,
+        "es6": true
     },
     "parserOptions": {
         "ecmaVersion": 6
