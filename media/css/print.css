@@ -1,0 +1,61 @@
+@media print {
+    body { background-color: transparent; }
+    .contentbox {
+        display: block !important;
+    }
+    #maincontent {
+        display: block !important;
+        width: 100%;
+        max-width: 100%;
+    }
+    main p, main li, main div, main table * { font-size: 1.5rem; }
+    main a[href]:after {
+        content: " (" attr(href) ")";
+        font-style: italic;
+        color: #666 !important;
+    }
+    .block-table_caption {
+        background-color: transparent;
+        color: #3399cc;
+        padding: 0.5rem;
+        text-align: center;
+        font-weight: 700;
+        border: 1px solid #ccc;
+    }
+    .block-table thead {
+        background-color: transparent;
+        color: #3399cc;
+    }
+    .block-table thead th {
+        color: #3399cc;
+    }
+    .richtext-image {
+        display: block;
+        width: auto;
+        height: auto;
+    }
+    .table-responsive {
+        width: auto;
+        page-break-inside: avoid;
+    }
+    figure, img {
+        page-break-inside: avoid;
+    }
+    .block-table table * {
+        font-size: 1.25rem;
+        width: auto;
+    }
+    .block-table table th,
+    .block-table table td {
+        padding: 0.25rem;
+    }
+    .richtext-image.right {
+        float: right;
+        margin-left: 1rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    #cu-privacy-notice {
+        display: none !important;
+    }
+}
