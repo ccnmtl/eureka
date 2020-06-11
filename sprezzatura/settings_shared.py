@@ -1,5 +1,6 @@
 # Django settings for the Sprezzatura project.
 import os.path
+import sys
 from ccnmtlsettings.shared import common
 
 project = 'sprezzatura'
@@ -86,3 +87,23 @@ WIND_AFFIL_HANDLERS = ['sprezzatura.main.auth.WagtailEditorMapper',
                        'djangowind.auth.SuperuserMapper']
 
 WAGTAILADMIN_STATIC_FILE_VERSION_STRINGS = True
+
+# Needed to get Cypress to run
+if 'integrationserver' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:',
+            'HOST': '',
+            'PORT': '',
+            'USER': '',
+            'PASSWORD': '',
+            'ATOMIC_REQUESTS': True,
+        }
+    }
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    PASSWORD_HASHERS = (
+        'django.contrib.auth.hashers.MD5PasswordHasher',
+    )
