@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<main>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>{{ page.title }}</h1>
+            {% include_block page.body %}
+        </div>
+    </div>
+</div>
+</main>
+{% endblock %}
+

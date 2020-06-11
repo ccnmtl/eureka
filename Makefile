@@ -1,5 +1,5 @@
 APP=sprezzatura
-JS_FILES=media/js/src media/js/tests
+JS_FILES=media/src/js
 
 all: jenkins cypress-test
 

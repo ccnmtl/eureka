@@ -1,17 +1,14 @@
-from django.db import models
 from django.http import Http404
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import redirect
 from wagtail.admin.edit_handlers import (
-    StreamFieldPanel, FieldPanel, InlinePanel
+    StreamFieldPanel
 )
 from wagtail.core.blocks import (
-    RichTextBlock, StructBlock, StreamBlock, BlockQuoteBlock, CharBlock
+    RichTextBlock
 )
-from wagtail.core.fields import StreamField, RichTextField
+from wagtail.core.fields import StreamField
 from wagtail.core.models import Page
-from wagtail.core.url_routing import RouteResult
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtailmenus.models import MenuPageMixin
 from wagtailmenus.panels import menupage_panel
 

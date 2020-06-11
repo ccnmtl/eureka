@@ -17,7 +17,6 @@ IMPROV_TYPE_LIST = [
 
 
 def create_ear_training_elements(et_root_page, element_list):
-    # Nested function so that it has access to the models
     for el in element_list:
         element_container = EarTrainingElementContainerPage(
             title=el
