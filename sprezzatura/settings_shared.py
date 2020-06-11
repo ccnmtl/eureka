@@ -27,6 +27,7 @@ INSTALLED_APPS += [  # noqa
     'wagtail.contrib.redirects',
     'wagtail.contrib.styleguide',
     'wagtail.contrib.table_block',
+    'wagtail.contrib.modeladmin',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -39,8 +40,36 @@ INSTALLED_APPS += [  # noqa
     'modelcluster',
     'taggit',
     'wagtailfontawesome',
+    'wagtailmenus',
 
     'sprezzatura.main',
+]
+
+# Customized from CCNMTL Common
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(base, "templates"),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.template.context_processors.request',
+                'django.contrib.messages.context_processors.messages',
+                'djangowind.context.context_processor',
+                'stagingcontext.staging_processor',
+                'gacontext.ga_processor',
+                'wagtail.contrib.settings.context_processors.settings',
+                'wagtailmenus.context_processors.wagtailmenus',
+            ],
+        },
+    },
 ]
 
 THUMBNAIL_SUBDIR = "thumbs"
