@@ -95,6 +95,14 @@ class EarTrainingLevelPage(Page, MenuPageMixin):
         ('image', ImageChooserBlock())
     ])
 
+    def get_context(self, request, *args, **kwargs):
+        ctx = super().get_context(request, *args, **kwargs)
+        ctx['et_level_nav'] = [
+            {'page':  el, 'active': True if el.specific == self else False}
+            for el in self.get_siblings()
+        ]
+        return ctx
+
     class Meta:
         verbose_name = "Ear Training Level Page"
 
@@ -133,6 +141,23 @@ class EarTrainingElementPage(Page, MenuPageMixin):
         ('rich_text', RichTextBlock()),
         ('image', ImageChooserBlock())
     ])
+
+    def get_context(self, request, *args, **kwargs):
+        ctx = super().get_context(request, *args, **kwargs)
+        et_level_parent = self.get_parent().get_parent()
+        ctx['et_level_nav'] = [
+            {'page':  el, 'active': True if el == et_level_parent else False}
+            for el in et_level_parent.get_siblings()
+        ]
+        et_element_container = self.get_parent()
+        ctx['et_elements_nav'] = [
+            {
+                'page': el,
+                'active': True if el == et_element_container else False
+            }
+            for el in et_element_container.get_siblings()
+        ]
+        return ctx
 
     class Meta:
         verbose_name = "Ear Training Element Page"

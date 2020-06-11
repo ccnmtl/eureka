@@ -5,8 +5,41 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
+            <nav>
+                <ul class="nav nav-tabs">
+                    {% for p in et_level_nav %}
+                    <li class="nav-item">
+                        <a class="nav-link{% if p.active %} active{% endif %}" href="{% if p.active %}#{% else %}{{ p.page.get_url }}{% endif %}">{{ p.page.title }}</a>
+                    </li>
+                    {% endfor%}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
             <h1>{{ page.title }}</h1>
             {% include_block page.body %}
+        </div>
+        <div class="col-md-3">
+            <nav>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">
+                            {{ page.title }}
+                        </a>
+                    </li>
+                    {% for p in page.get_children %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ p.get_url }}">
+                            {{ p.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
