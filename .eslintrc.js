@@ -12,7 +12,8 @@ module.exports = {
     "plugins": [
         "security",
         "scanjs-rules",
-        "no-unsafe-innerhtml"
+        "no-unsafe-innerhtml",
+        "cypress"
     ],
     "extends": [
         "eslint:recommended",

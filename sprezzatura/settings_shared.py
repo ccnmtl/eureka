@@ -1,5 +1,6 @@
 # Django settings for the Sprezzatura project.
 import os.path
+import sys
 from ccnmtlsettings.shared import common
 
 project = 'sprezzatura'
@@ -27,6 +28,7 @@ INSTALLED_APPS += [  # noqa
     'wagtail.contrib.redirects',
     'wagtail.contrib.styleguide',
     'wagtail.contrib.table_block',
+    'wagtail.contrib.modeladmin',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -39,8 +41,36 @@ INSTALLED_APPS += [  # noqa
     'modelcluster',
     'taggit',
     'wagtailfontawesome',
+    'wagtailmenus',
 
     'sprezzatura.main',
+]
+
+# Customized from CCNMTL Common
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(base, "templates"),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.template.context_processors.request',
+                'django.contrib.messages.context_processors.messages',
+                'djangowind.context.context_processor',
+                'stagingcontext.staging_processor',
+                'gacontext.ga_processor',
+                'wagtail.contrib.settings.context_processors.settings',
+                'wagtailmenus.context_processors.wagtailmenus',
+            ],
+        },
+    },
 ]
 
 THUMBNAIL_SUBDIR = "thumbs"
@@ -57,3 +87,23 @@ WIND_AFFIL_HANDLERS = ['sprezzatura.main.auth.WagtailEditorMapper',
                        'djangowind.auth.SuperuserMapper']
 
 WAGTAILADMIN_STATIC_FILE_VERSION_STRINGS = True
+
+# Needed to get Cypress to run
+if 'integrationserver' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:',
+            'HOST': '',
+            'PORT': '',
+            'USER': '',
+            'PASSWORD': '',
+            'ATOMIC_REQUESTS': True,
+        }
+    }
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    PASSWORD_HASHERS = (
+        'django.contrib.auth.hashers.MD5PasswordHasher',
+    )

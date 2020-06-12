@@ -20,3 +20,5 @@ node_modules
 uploads/
 .DS_Store
 local.mk
+cypress/screenshots
+cypress/videos
