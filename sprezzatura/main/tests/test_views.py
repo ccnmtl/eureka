@@ -11,10 +11,6 @@ from wagtail.tests.utils import WagtailPageTests
 class ViewTest(WagtailPageTests):
     """These test check that the page can be routed and can
     render templates cleanly"""
-    @classmethod
-    def setUpTestData(cls):
-        call_command('bootstrap_site_tree')
-
     def test_smoketest(self):
         response = self.client.get('/smoketest/')
         self.assertEquals(response.status_code, 200)
