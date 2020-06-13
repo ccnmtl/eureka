@@ -1,4 +1,3 @@
-from django.core.management import call_command
 from sprezzatura.main.models import (
     HomePage, ImprovisationTypeIndexPage, ImprovisationTypePage,
     EarTrainingIndexPage, EarTrainingLevelPage,

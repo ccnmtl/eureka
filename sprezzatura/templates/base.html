@@ -66,8 +66,10 @@
     
     <footer class="container">
     </footer>
-
+    
+    <nav aria-label="Wagtail User Menu">
     {% wagtailuserbar %}
+    </nav>
 
     {% if STAGING_ENV %}
     <div class="alert alert-danger alert-dismissable fade show fixed-bottom">
@@ -98,6 +100,8 @@
     {% endif %} 
 
     <script src="{{STATIC_URL}}build/main.js"></script>
+    {% if not debug %}
     <script src="https://search.sites.columbia.edu/cu-privacy-notice/cu-privacy-notice.js"></script>    
+    {% endif %}
 </body>
 </html>

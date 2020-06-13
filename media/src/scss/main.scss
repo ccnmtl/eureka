@@ -1,3 +1,7 @@
+// Bootstrap overrides must precede the Bootstrap import
+$blue: #0056b2;
+
+// Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
 // Custom styles

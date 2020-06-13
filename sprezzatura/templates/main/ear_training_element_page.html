@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <nav>
+            <nav class="et-tab-nav" aria-label="Ear training level">
                 <ul class="nav nav-tabs">
                     {% for p in et_level_nav %}
                     <li class="nav-item">
@@ -24,7 +24,7 @@
             {% include_block page.body %}
         </div>
         <div class="col-md-3">
-            <nav class="et-sidebar-nav">
+            <nav class="et-sidebar-nav" aria-label="Ear training elements">
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
@@ -37,7 +37,7 @@
                             <a class="nav-link disabled" href="{{ p.page.get_url }}">
                                 {{ p.page.title }}
                             </a>
-                            <nav class="et-sidebar-nav__nested-nav">
+                            <div class="et-sidebar-nav__nested-nav">
                                 <ul class="nav flex-column">
                                     {% for sibling in page.get_siblings %}
                                     <li class="nav-item">
@@ -45,7 +45,7 @@
                                     </li>
                                     {% endfor %}
                                 </ul>
-                            </nav>
+                            </div>
                         </li>
                         {% else %}
                         <li class="nav-item">
