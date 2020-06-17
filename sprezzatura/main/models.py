@@ -13,6 +13,23 @@ from wagtailmenus.models import MenuPageMixin
 from wagtailmenus.panels import menupage_panel
 
 
+def pack_nav_pages(page_list, active_page):
+    """This takes a list of pages and an active page, and returns a list
+    of type {'page': SubclassedPage, 'active': Bool}
+    This is used to build lists of links for navigation elements where the
+    link for one of these pages needs to be marked active so that it can
+    be represented differently on the front end.
+
+    NOTE: the items in page_list and page must be of the same type
+    """
+    return [
+        {
+            'page': el,
+            'active': True if el == active_page else False
+        } for el in page_list
+    ]
+
+
 class HomePage(Page, MenuPageMixin):
     class Meta:
         verbose_name = "Homepage"
@@ -97,10 +114,8 @@ class EarTrainingLevelPage(Page, MenuPageMixin):
 
     def get_context(self, request, *args, **kwargs):
         ctx = super().get_context(request, *args, **kwargs)
-        ctx['et_level_nav'] = [
-            {'page':  el, 'active': True if el.specific == self else False}
-            for el in self.get_siblings()
-        ]
+        siblings = [el.specific for el in self.get_siblings()]
+        ctx['et_level_nav'] = pack_nav_pages(siblings, self)
         return ctx
 
     class Meta:
@@ -144,19 +159,15 @@ class EarTrainingElementPage(Page, MenuPageMixin):
 
     def get_context(self, request, *args, **kwargs):
         ctx = super().get_context(request, *args, **kwargs)
+
         et_level_parent = self.get_parent().get_parent()
-        ctx['et_level_nav'] = [
-            {'page':  el, 'active': True if el == et_level_parent else False}
-            for el in et_level_parent.get_siblings()
-        ]
+        ctx['et_level_nav'] = pack_nav_pages(
+            et_level_parent.get_siblings(), et_level_parent)
+
         et_element_container = self.get_parent()
-        ctx['et_elements_nav'] = [
-            {
-                'page': el,
-                'active': True if el == et_element_container else False
-            }
-            for el in et_element_container.get_siblings()
-        ]
+        ctx['et_elements_nav'] = pack_nav_pages(
+            et_element_container.get_siblings(), et_element_container)
+
         return ctx
 
     class Meta:
