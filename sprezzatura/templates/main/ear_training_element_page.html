@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <nav class="et-tab-nav" aria-label="Ear training level">
+                <ul class="nav nav-tabs">
+                    {% for p in et_level_nav %}
+                    <li class="nav-item">
+                        <a class="nav-link{% if p.active %} active{% endif %}" href="{% if p.active %}#{% else %}{{ p.page.get_url }}{% endif %}">{{ p.page.title }}</a>
+                    </li>
+                    {% endfor%}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1>{{ page.title }}</h1>
+            {% include_block page.body %}
+        </div>
+        <div class="col-md-3">
+            <nav class="et-sidebar-nav" aria-label="Ear training elements">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            {{ page.get_parent.get_parent }}
+                        </a>
+                    </li>
+                    {% for p in et_elements_nav %}
+                        {% if p.active %}
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="{{ p.page.get_url }}">
+                                {{ p.page.title }}
+                            </a>
+                            <div class="et-sidebar-nav__nested-nav">
+                                <ul class="nav flex-column">
+                                    {% for sibling in page.get_siblings %}
+                                    <li class="nav-item">
+                                        <a class="nav-link{% if sibling.specific == page %} disabled{% endif %}" href="{{ sibling.get_url }}">{{ sibling.title }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ p.page.get_url }}">
+                                {{ p.page.title }}
+                            </a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

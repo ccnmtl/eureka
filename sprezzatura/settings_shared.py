@@ -88,6 +88,9 @@ WIND_AFFIL_HANDLERS = ['sprezzatura.main.auth.WagtailEditorMapper',
 
 WAGTAILADMIN_STATIC_FILE_VERSION_STRINGS = True
 
+# Set custom test runner
+TEST_RUNNER = 'sprezzatura.main.tests.runner.SprezzaturaTestRunner'
+
 # Needed to get Cypress to run
 if 'integrationserver' in sys.argv:
     DATABASES = {

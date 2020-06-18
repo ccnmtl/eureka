@@ -1,4 +1,5 @@
 {% load compress %}
+{% load wagtailuserbar %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -39,27 +40,36 @@
 
   </head>
 <body>
-    <script src="https://search.sites.columbia.edu/cu-privacy-notice/cu-privacy-notice.js"></script>    
     <header class="container">
-    <!-- skippy -->
+        <!-- skippy -->
         <a href="#maincontent" class="skippy focus-none sr-only sr-only-focusable" id="contentjump">
             Skip to main content
         </a>
         {% block segment_nav %}{% endblock %}
-        <h1 class="sr-only">Sprezzatura</h1>
-        <nav class="navbar navbar-expand d-print-none" aria-label="Sprezzatura site">
-            <ul class="navbar-nav">
-                {# Nav li's go here #}
-            </ul>
+        <nav id="main-nav" class="navbar navbar-expand d-print-none navbar-dark bg-dark" aria-label="Sprezzatura site">
+            <a class="navbar-brand" href="/">Sprezzatura</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    {# Nav li's go here #}
+                </ul>
+            </div>
         </nav>
     </header>
     
-    <div class="row container mx-auto contentbox">
-        {% block content %}{% endblock %}
-    </div>
+    <main id="maincontent">
+    {% block content %}{% endblock %}
+    </main>
     
     <footer class="container">
     </footer>
+    
+    <nav aria-label="Wagtail User Menu">
+    {% wagtailuserbar %}
+    </nav>
 
     {% if STAGING_ENV %}
     <div class="alert alert-danger alert-dismissable fade show fixed-bottom">
@@ -90,5 +100,8 @@
     {% endif %} 
 
     <script src="{{STATIC_URL}}build/main.js"></script>
+    {% if not debug %}
+    <script src="https://search.sites.columbia.edu/cu-privacy-notice/cu-privacy-notice.js"></script>    
+    {% endif %}
 </body>
 </html>
