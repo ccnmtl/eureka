@@ -1,6 +1,8 @@
+from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.core.blocks import (CharBlock, TextBlock, RichTextBlock,
-                                 StructBlock, StreamBlock)
+from wagtail.core.blocks import (
+    CharBlock, TextBlock, RichTextBlock, StructBlock, StreamBlock
+)
 from wagtail.contrib.table_block.blocks import TableBlock
 
 
@@ -21,6 +23,15 @@ class ImageBlock(StructBlock):
     class Meta:
         icon = 'image'
         template = "main/blocks/image_block.html"
+
+
+class MusicBlock(StructBlock):
+    file = DocumentChooserBlock()
+    caption = CharBlock(required=False)
+
+    class Meta:
+        icon = 'image'
+        template = "main/blocks/music_block.html"
 
 
 # StreamBlocks
