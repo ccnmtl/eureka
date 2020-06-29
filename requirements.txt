@@ -128,5 +128,5 @@ xlsxwriter>=1.2.8,<2.0
 # wagtail additions
 wagtailfontawesome==1.2.1
 l18n==2018.5
-wagtailmenus==2.13.1
+wagtailmenus==3.0.2
 django-cogwheels==0.3
