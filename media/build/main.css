@@ -7246,6 +7246,9 @@ a.text-dark:hover, a.text-dark:focus {
 #main-nav {
   margin: 0 0 1em 0; }
 
+.music-notation-streamfield {
+  overflow-x: scroll; }
+
 .et-sidebar-nav .disabled {
   color: #000; }
 
