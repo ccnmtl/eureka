@@ -7,6 +7,7 @@ from sprezzatura.main.models import (
     EarTrainingElementContainerPage, EarTrainingElementPage,
     ImprovisationCombinationIndexPage, ImprovisationCombinationPage
 )
+from wagtail.core.blocks import StreamBlock, StreamValue, RichTextBlock
 from wagtail.core.models import Page, Site
 from wagtail.core.rich_text import RichText
 from wagtailmenus.conf import settings
@@ -28,7 +29,17 @@ def create_ear_training_elements(et_root_page, element_list):
         for improv_type in IMPROV_TYPE_LIST:
             imp_type_page = EarTrainingElementPage(
                 title='{} with {}'.format(el, improv_type),
-                body=[('rich_text', RichText('<p>TBD</p>'))]
+                body=[('topic', {
+                    'title': 'Out of tempo',
+                    'musical_elements': [{
+                        'element_title': 'Out of tempo with intervals',
+                        'content': StreamValue(
+                            stream_block=StreamBlock(
+                                [('rich_text', RichTextBlock())]),
+                            stream_data=[('rich_text', RichText('<p>TBD</p>'))]
+                        )
+                    }]
+                })]
             )
             element_container.add_child(instance=imp_type_page)
             imp_type_page.save_revision().publish()
