@@ -7,8 +7,10 @@ from sprezzatura.main.models import (
     EarTrainingElementContainerPage, EarTrainingElementPage,
     ImprovisationCombinationIndexPage, ImprovisationCombinationPage
 )
+from wagtail.core.blocks import StreamBlock, StreamValue, RichTextBlock
 from wagtail.core.models import Page, Site
 from wagtail.core.rich_text import RichText
+from wagtailmenus.conf import settings
 
 IMPROV_TYPE_LIST = [
     'Landscaping', 'Arithmetic', 'Patterning', 'Call and Response',
@@ -27,7 +29,17 @@ def create_ear_training_elements(et_root_page, element_list):
         for improv_type in IMPROV_TYPE_LIST:
             imp_type_page = EarTrainingElementPage(
                 title='{} with {}'.format(el, improv_type),
-                body=[('rich_text', RichText('<p>TBD</p>'))]
+                body=[('topic', {
+                    'title': 'Out of tempo',
+                    'musical_elements': [{
+                        'element_title': 'Out of tempo with intervals',
+                        'content': StreamValue(
+                            stream_block=StreamBlock(
+                                [('rich_text', RichTextBlock())]),
+                            stream_data=[('rich_text', RichText('<p>TBD</p>'))]
+                        )
+                    }]
+                })]
             )
             element_container.add_child(instance=imp_type_page)
             imp_type_page.save_revision().publish()
@@ -48,7 +60,7 @@ class Command(BaseCommand):
         root.add_child(instance=homepage)
         homepage.save_revision().publish()
 
-        Site.objects.create(
+        site = Site.objects.create(
             hostname='localhost',
             root_page_id=homepage.id,
             is_default_site=True
@@ -56,7 +68,8 @@ class Command(BaseCommand):
 
         # Improv Type Index
         improv_type_index = ImprovisationTypeIndexPage(
-            title='Improvisation Types'
+            title='Improvisation Types',
+            show_in_menus=True
         )
         homepage.add_child(instance=improv_type_index)
         improv_type_index.save_revision().publish()
@@ -72,7 +85,8 @@ class Command(BaseCommand):
 
         # Ear training
         ear_training_index = EarTrainingIndexPage(
-            title='Ear Training'
+            title='Ear Training',
+            show_in_menus=True
         )
         homepage.add_child(instance=ear_training_index)
         ear_training_index.save_revision().publish()
@@ -80,6 +94,7 @@ class Command(BaseCommand):
         # ET 1
         et_one = EarTrainingLevelPage(
             title='Introduction to Ear Training One',
+            show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
         ear_training_index.add_child(instance=et_one)
@@ -94,6 +109,7 @@ class Command(BaseCommand):
         # ET 2
         et_two = EarTrainingLevelPage(
             title='Introduction to Ear Training Two',
+            show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
         ear_training_index.add_child(instance=et_two)
@@ -108,6 +124,7 @@ class Command(BaseCommand):
         # ET 3
         et_three = EarTrainingLevelPage(
             title='Introduction to Ear Training Three',
+            show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
         ear_training_index.add_child(instance=et_three)
@@ -122,6 +139,7 @@ class Command(BaseCommand):
         # ET 4
         et_four = EarTrainingLevelPage(
             title='Introduction to Ear Training Four',
+            show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
         ear_training_index.add_child(instance=et_four)
@@ -135,17 +153,26 @@ class Command(BaseCommand):
 
         # Improv combinations
         improv_combo_index = ImprovisationCombinationIndexPage(
-            title='Improvisation Combinations'
+            title='Improvisation Combinations',
+            show_in_menus=True
         )
         homepage.add_child(instance=improv_combo_index)
         improv_combo_index.save_revision().publish()
 
         improv_combos = [
-            'Beginins Layering', 'Intermediate Layering', 'Advanced Layering']
+            'Begining Layering', 'Intermediate Layering', 'Advanced Layering']
         for i in improv_combos:
             combo_page = ImprovisationCombinationPage(
                 title=i,
+                show_in_menus=True,
                 body=[('rich_text', RichText('<p>TBD</p>'))]
             )
             improv_combo_index.add_child(instance=combo_page)
             combo_page.save_revision().publish()
+
+        # Setup Main Menu
+        menu_model = settings.models.MAIN_MENU_MODEL
+        menu = menu_model.get_for_site(site)
+        menu.add_menu_items_for_pages(
+            homepage.get_descendants().filter(depth=homepage.depth + 1)
+        )

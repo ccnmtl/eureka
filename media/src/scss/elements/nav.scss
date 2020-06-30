@@ -1,3 +1,10 @@
 #main-nav {
     margin: 0 0 1em 0;
 }
+
+.navbar-nav .nav-link {
+    color: #FFFFFF !important;
+    &.active {
+        text-decoration: underline;
+    }
+}

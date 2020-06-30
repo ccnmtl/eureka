@@ -7246,6 +7246,11 @@ a.text-dark:hover, a.text-dark:focus {
 #main-nav {
   margin: 0 0 1em 0; }
 
+.navbar-nav .nav-link {
+  color: #FFFFFF !important; }
+  .navbar-nav .nav-link.active {
+    text-decoration: underline; }
+
 .music-notation-streamfield {
   overflow-x: scroll; }
 

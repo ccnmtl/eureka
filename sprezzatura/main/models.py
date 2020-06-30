@@ -1,6 +1,6 @@
 from django.http import Http404
 from django.shortcuts import redirect
-from sprezzatura.main.blocks import MusicBlock
+from sprezzatura.main.blocks import EarTrainingElementBlock
 from wagtail.admin.edit_handlers import (
     StreamFieldPanel
 )
@@ -154,9 +154,7 @@ class EarTrainingElementContainerPage(Page, MenuPageMixin):
 
 class EarTrainingElementPage(Page, MenuPageMixin):
     body = StreamField([
-        ('rich_text', RichTextBlock()),
-        ('image', ImageChooserBlock()),
-        ('music_example', MusicBlock())
+        ('topic', EarTrainingElementBlock())
     ])
 
     def get_context(self, request, *args, **kwargs):

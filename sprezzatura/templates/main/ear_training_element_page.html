@@ -21,7 +21,32 @@
     <div class="row">
         <div class="col-md-9">
             <h1>{{ page.title }}</h1>
-            {% include_block page.body %}
+
+            <nav class="row">
+                {% for block in page.body %}
+                <div class="col-md-4">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a href="#{{ block.id }}">{{ block.value.title }}</a>
+                            <ul class="nav flex-column">
+                                {% for el in block.value.musical_elements %}
+                                <li class="nav-item"><a href="#{{ block.id }}-{{ forloop.counter }}">{{ el.element_title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </nav>
+
+            <hr/>
+
+            {% for block in page.body %}
+                <h2 id="{{ block.id }}">{{ block.value.title }}</h2>
+                {% for el in block.value.musical_elements %}
+                    <h3 id="{{ block.id }}-{{ forloop.counter }}">{{ el.element_title }}</h3>
+                    {% include_block el.content %}
+                {% endfor %}
+            {% endfor %}
         </div>
         <div class="col-md-3">
             <nav class="et-sidebar-nav" aria-label="Ear training elements">

@@ -1,7 +1,7 @@
 from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.core.blocks import (
-    CharBlock, TextBlock, RichTextBlock, StructBlock, StreamBlock
+    CharBlock, TextBlock, RichTextBlock, StructBlock, StreamBlock, ListBlock
 )
 from wagtail.contrib.table_block.blocks import TableBlock
 
@@ -32,6 +32,20 @@ class MusicBlock(StructBlock):
     class Meta:
         icon = 'image'
         template = "main/blocks/music_block.html"
+
+
+class EarTrainingElementBlock(StructBlock):
+    title = CharBlock()
+    musical_elements = ListBlock(
+        StructBlock([
+            ('element_title', CharBlock()),
+            ('content', StreamBlock([
+                ('rich_text', RichTextBlock()),
+                ('image', ImageChooserBlock()),
+                ('music_example', MusicBlock())
+            ], icon='cogs'))
+        ])
+    )
 
 
 # StreamBlocks
