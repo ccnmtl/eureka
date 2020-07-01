@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
 
-    <title>Sign in to Sprezzatura Editor CMS</title>
+    <title>Sign in to Eureka Editor CMS</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@
         <form method="get" action="{{ CAS_BASE }}cas/login">
             {% csrf_token %}
             <input type="hidden" name="destination" value="https://{{ request.get_host }}/accounts/caslogin/?next={{ request.get_full_path|urlencode }}" />
-            <h1 class="display-h4 mt-5 text-center">Sprezzatura Editor CMS</h1>
+            <h1 class="display-h4 mt-5 text-center">Eureka Editor CMS</h1>
             <div class="text-center mt-5"><input class="btn btn-primary btn-lg" type="submit" value="Please Log In" /></div>
         </form>
         {% endif %}

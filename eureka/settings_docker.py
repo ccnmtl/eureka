@@ -1,5 +1,5 @@
 # flake8: noqa
-from sprezzatura.settings_shared import *
+from eureka.settings_shared import *
 from ccnmtlsettings.docker import common
 import os
 

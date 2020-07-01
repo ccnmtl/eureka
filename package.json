@@ -1,7 +1,7 @@
 {
-  "name": "Sprezzatura",
+  "name": "Eureka",
   "version": "1.0.0",
-  "description": "Sprezzatura - A digital guidebook for using improvisation in the ear traiing classroom",
+  "description": "Eureka - A digital guidebook for using improvisation in the ear traiing classroom",
   "main": "",
   "scripts": {
     "dev": "webpack -d --watch",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ccnmtl/sprezzatura.git"
+    "url": "git://github.com/ccnmtl/eureka.git"
   },
   "author": {
     "name": "Center for Teaching and Learning - Columbia University",
@@ -22,7 +22,7 @@
   },
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/ccnmtl/sprezzatura/issues"
+    "url": "https://github.com/ccnmtl/eureka/issues"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.0",

@@ -1,15 +1,15 @@
-# Django settings for the Sprezzatura project.
+# Django settings for the Eureka project.
 import os.path
 import sys
 from ccnmtlsettings.shared import common
 
-project = 'sprezzatura'
+project = 'eureka'
 base = os.path.dirname(__file__)
 
 locals().update(common(project=project, base=base))
 
 PROJECT_APPS = [
-    'sprezzatura.main',
+    'eureka.main',
 ]
 
 USE_TZ = True
@@ -43,7 +43,7 @@ INSTALLED_APPS += [  # noqa
     'wagtailfontawesome',
     'wagtailmenus',
 
-    'sprezzatura.main',
+    'eureka.main',
 ]
 
 # Customized from CCNMTL Common
@@ -77,12 +77,12 @@ THUMBNAIL_SUBDIR = "thumbs"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/cms/"
 
-WAGTAIL_SITE_NAME = 'Sprezzatura'
+WAGTAIL_SITE_NAME = 'Eureka'
 WAGTAIL_FRONTEND_LOGIN_URL = '/accounts/login/'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-WIND_AFFIL_HANDLERS = ['sprezzatura.main.auth.WagtailEditorMapper',
+WIND_AFFIL_HANDLERS = ['eureka.main.auth.WagtailEditorMapper',
                        'djangowind.auth.StaffMapper',
                        'djangowind.auth.SuperuserMapper']
 
@@ -91,7 +91,7 @@ WAGTAILADMIN_STATIC_FILE_VERSION_STRINGS = True
 WAGTAILMENUS_ACTIVE_ANCESTOR_CLASS = 'active'
 
 # Set custom test runner
-TEST_RUNNER = 'sprezzatura.main.tests.runner.SprezzaturaTestRunner'
+TEST_RUNNER = 'eureka.main.tests.runner.EurekaTestRunner'
 
 # Needed to get Cypress to run
 if 'integrationserver' in sys.argv:

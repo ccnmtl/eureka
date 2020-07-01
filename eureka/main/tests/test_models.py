@@ -1,4 +1,4 @@
-from sprezzatura.main.models import (
+from eureka.main.models import (
     EarTrainingElementContainerPage, EarTrainingLevelPage,
     EarTrainingElementPage, pack_nav_pages
 )

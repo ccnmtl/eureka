@@ -1,6 +1,6 @@
 from django.http import Http404
 from django.shortcuts import redirect
-from sprezzatura.main.blocks import EarTrainingElementBlock
+from eureka.main.blocks import EarTrainingElementBlock
 from wagtail.admin.edit_handlers import (
     StreamFieldPanel
 )

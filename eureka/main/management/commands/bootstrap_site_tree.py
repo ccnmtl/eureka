@@ -1,7 +1,7 @@
 from django.core.management.base import (
     BaseCommand, CommandError
 )
-from sprezzatura.main.models import (
+from eureka.main.models import (
     HomePage, ImprovisationTypeIndexPage, ImprovisationTypePage,
     EarTrainingIndexPage, EarTrainingLevelPage,
     EarTrainingElementContainerPage, EarTrainingElementPage,
@@ -56,7 +56,7 @@ class Command(BaseCommand):
         Site.objects.all().delete()
 
         root = Page.objects.get(id=1)
-        homepage = HomePage(title='Sprezzatura')
+        homepage = HomePage(title='Eureka')
         root.add_child(instance=homepage)
         homepage.save_revision().publish()
 
