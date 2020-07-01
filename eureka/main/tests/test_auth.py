@@ -1,8 +1,8 @@
 from django.test import TestCase
 from django.test.utils import override_settings
 
-from sprezzatura.main.tests.factories import UserFactory, GroupFactory
-from sprezzatura.main.auth import WagtailEditorMapper
+from eureka.main.tests.factories import UserFactory, GroupFactory
+from eureka.main.auth import WagtailEditorMapper
 
 
 @override_settings(WIND_STAFF_MAPPER_GROUPS=['foo.bar.local:columbia.edu'])

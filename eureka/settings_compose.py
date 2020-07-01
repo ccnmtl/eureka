@@ -1,5 +1,5 @@
 # flake8: noqa
-from sprezzatura.settings_shared import *
+from eureka.settings_shared import *
 from ccnmtlsettings.compose import common
 
 locals().update(
@@ -11,6 +11,6 @@ locals().update(
     ))
 
 try:
-    from sprezzatura.local_settings import *
+    from eureka.local_settings import *
 except ImportError:
     pass

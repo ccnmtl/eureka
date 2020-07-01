@@ -18,6 +18,6 @@ RUN VE=/ve/ MANAGE="/ve/bin/python manage.py" NODE_MODULES=/node/node_modules/ m
 
 EXPOSE 8000
 ADD docker-run.sh /run.sh
-ENV APP sprezzatura
+ENV APP eureka
 ENTRYPOINT ["/run.sh"]
 CMD ["run"]

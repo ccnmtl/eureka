@@ -1,4 +1,4 @@
-from sprezzatura.main.models import (
+from eureka.main.models import (
     HomePage, ImprovisationTypeIndexPage, ImprovisationTypePage,
     EarTrainingIndexPage, EarTrainingLevelPage,
     EarTrainingElementPage, ImprovisationCombinationIndexPage,

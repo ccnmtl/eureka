@@ -1,4 +1,4 @@
-# Sprezzatura - Digital Guidebook for Improvisation in the Ear Training Classroom 
+# Eureka - Digital Guidebook for Improvisation in the Ear Training Classroom 
 ## Quick Start 
 Use `make dev`. This is equivalent to running Django's `./manage.py runserver` in one shell and Webpack in another. The output from both will be printed to the shell. Use CTR-C to exit.
 
@@ -11,7 +11,7 @@ To compile these assets during development, run `make webpack`.
 
 ## Make Targets for Development
 ### Overview
-Sprezzatura relies on a number of different technologies during development:
+Eureka relies on a number of different technologies during development:
 - Webpack to compile ES6 into a single js asset.
 - Webpack also compiles SCSS files to CSS, along with generated source maps
 - Cypress for client-side testing

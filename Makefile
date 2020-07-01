@@ -1,4 +1,4 @@
-APP=sprezzatura
+APP=eureka
 JS_FILES=media/src/js
 
 all: jenkins cypress-test
