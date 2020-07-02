@@ -12,6 +12,17 @@ locals().update(
         INSTALLED_APPS=INSTALLED_APPS,  # noqa f405
     ))
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'eureka',
+        'HOST': '',
+        'PORT': '6432',
+        'USER': '',
+        'PASSWORD': '',
+    }
+}
+
 try:
     from eureka.local_settings import *  # noqa f403
 except ImportError:
