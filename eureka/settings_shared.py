@@ -93,6 +93,17 @@ WAGTAILMENUS_ACTIVE_ANCESTOR_CLASS = 'active'
 # Set custom test runner
 TEST_RUNNER = 'eureka.main.tests.runner.EurekaTestRunner'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'eureka',
+        'HOST': '',
+        'PORT': '6432',
+        'USER': '',
+        'PASSWORD': '',
+    }
+}
+
 # Needed to get Cypress to run
 if 'integrationserver' in sys.argv:
     DATABASES = {
