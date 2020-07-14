@@ -18,7 +18,7 @@ IMPROV_TYPE_LIST = [
     'Rhythm', 'Change', 'Smorgasboard'
 ]
 
-YT_TEST_VIDEO = 'https://www.youtube.com/embed/l4bDVq-nP-0'
+YT_TEST_VIDEO = 'https://www.youtube.com/embed/UAhbcsv66nE'
 
 
 def create_ear_training_elements(et_root_page, element_list):
