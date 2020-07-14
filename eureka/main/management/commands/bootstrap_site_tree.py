@@ -1,6 +1,7 @@
 from django.core.management.base import (
     BaseCommand, CommandError
 )
+from eureka.main.blocks import VideoEmbedBlock
 from eureka.main.models import (
     HomePage, ImprovisationTypeIndexPage, ImprovisationTypePage,
     EarTrainingIndexPage, EarTrainingLevelPage,
@@ -17,6 +18,8 @@ IMPROV_TYPE_LIST = [
     'Rhythm', 'Change', 'Smorgasboard'
 ]
 
+YT_TEST_VIDEO = 'https://www.youtube.com/embed/UAhbcsv66nE'
+
 
 def create_ear_training_elements(et_root_page, element_list):
     for el in element_list:
@@ -28,18 +31,7 @@ def create_ear_training_elements(et_root_page, element_list):
 
         for improv_type in IMPROV_TYPE_LIST:
             imp_type_page = EarTrainingElementPage(
-                title='{} with {}'.format(el, improv_type),
-                body=[('topic', {
-                    'title': 'Out of tempo',
-                    'musical_elements': [{
-                        'element_title': 'Out of tempo with intervals',
-                        'content': StreamValue(
-                            stream_block=StreamBlock(
-                                [('rich_text', RichTextBlock())]),
-                            stream_data=[('rich_text', RichText('<p>TBD</p>'))]
-                        )
-                    }]
-                })]
+                title='{} with {}'.format(el, improv_type)
             )
             element_container.add_child(instance=imp_type_page)
             imp_type_page.save_revision().publish()
@@ -105,6 +97,29 @@ class Command(BaseCommand):
             'Interval', 'Melody', 'Triads'
         ]
         create_ear_training_elements(et_one, et_one_elements)
+
+        # Add extra content for A11y testing
+        et_page = EarTrainingElementPage.objects.first()
+        et_page.body = [('topic', {
+            'title': 'Out of tempo',
+            'musical_elements': [{
+                'element_title': 'Out of tempo with intervals',
+                'content': StreamValue(
+                    stream_block=StreamBlock([
+                        ('rich_text', RichTextBlock()),
+                        ('video', VideoEmbedBlock()),
+                    ]),
+                    stream_data=[
+                        ('rich_text', RichText('<p>TBD</p>')),
+                        ('video', {
+                            'url': YT_TEST_VIDEO,
+                            'description': 'A very fine video'
+                        }),
+                    ]
+                )
+            }]
+        })]
+        et_page.save_revision().publish()
 
         # ET 2
         et_two = EarTrainingLevelPage(
