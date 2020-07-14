@@ -203,6 +203,12 @@ class ImprovisationCombinationPage(Page, MenuPageMixin):
         ('image', ImageChooserBlock())
     ])
 
+    def get_context(self, request, *args, **kwargs):
+        ctx = super().get_context(request, *args, **kwargs)
+        ctx['improv_combo_pages'] = pack_nav_pages(
+            [p.specific for p in self.get_siblings()], self)
+        return ctx
+
     class Meta:
         verbose_name = "Improvisation Combination Page"
 
