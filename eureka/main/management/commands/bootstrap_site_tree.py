@@ -152,7 +152,8 @@ class Command(BaseCommand):
 
         # ET 1
         et_one = EarTrainingLevelPage(
-            title='Ear Training One',
+            title='Introduction to Ear Training One',
+            tab_title='Ear Training One',
             show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
@@ -191,7 +192,8 @@ class Command(BaseCommand):
 
         # ET 2
         et_two = EarTrainingLevelPage(
-            title='Ear Training Two',
+            title='Introduction to Ear Training Two',
+            tab_title='Ear Training Two',
             show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
@@ -207,7 +209,8 @@ class Command(BaseCommand):
 
         # ET 3
         et_three = EarTrainingLevelPage(
-            title='Ear Training Three',
+            title='Introduction to Ear Training Three',
+            tab_title='Ear Training Three',
             show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
@@ -223,7 +226,8 @@ class Command(BaseCommand):
 
         # ET 4
         et_four = EarTrainingLevelPage(
-            title='Ear Training Four',
+            title='Introduction to Ear Training Four',
+            tab_title='Ear Training Four',
             show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
