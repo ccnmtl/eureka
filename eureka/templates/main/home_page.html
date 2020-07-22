@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% load wagtailcore_tags %}
 
+{% block body_class %}home-page-body{% endblock %}
+{% block body_style  %}style="background-image: url({{ STATIC_URL }}img/cello_suite_anna_magdalena_bach.jpg);"{% endblock %}
+
 {% block content %}
-<div class="container">
+<div id="home-page-container" class="container">
     <div class="row">
         <div class="col-12">
             <h1>{{ page.title }}</h1>

@@ -16,4 +16,11 @@ $eureka-white-primary: #F9F9F9;
 @import "./elements/typography";
 @import "./elements/nav";
 @import "./elements/music-notation";
+@import "./pages/home_page";
 @import "./pages/ear_training";
+
+// Base styles
+body {
+    position: relative;
+    min-height: 100vh;
+}

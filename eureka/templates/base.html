@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://search.sites.columbia.edu/cu-privacy-notice/cu-privacy-notice.css" />
     <!-- Project CSS -->
     {% compress css %}
-    <link rel="stylesheet" href="{{STATIC_URL}}build/main.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}build/main.css">
     {% block css %}{% endblock %}
     {% endcompress %}
 
@@ -27,7 +27,7 @@
     <meta property="og:title" content="Eureka - A digital guidebook for music improvisation in the ear training classroom" />
     <meta property="og:site_name" content="Eureka" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{STATIC_URL}}img/eureka-og.png" />
+    <meta property="og:image" content="{{ STATIC_URL }}img/eureka-og.png" />
     <meta property="og:image:alt" content="Logo of the Eureka project" />
     <meta property="og:description" content="A project to guide instructors on the use of improvisation in their ear training courses. Created by Peter Susser, Dept. of Music, Columbia University." />
     <meta property="og:url" content="https://eureka.ctl.columbia.edu" />
@@ -36,12 +36,12 @@
     <meta name="twitter:site" content="@Columbia_Music" />
     <meta name="twitter:title" content="Eureka" />
     <meta name="twitter:description" content="A project to guide instructors on the use of improvisation in their ear training courses. Created by Peter Susser, Dept. of Music, Columbia University." />
-    <meta name="twitter:image" content="{{STATIC_URL}}img/eureka-og.png" />
+    <meta name="twitter:image" content="{{ STATIC_URL }}img/eureka-og.png" />
     <meta name="twitter:image:alt" content="Logo of the Eureka project" />
 
 
   </head>
-<body>
+  <body class="{% block body_class %}{% endblock %}" {% block body_style %}{% endblock %}>
     <header>
         <!-- skippy -->
         <a href="#maincontent" class="skippy focus-none sr-only sr-only-focusable" id="contentjump">

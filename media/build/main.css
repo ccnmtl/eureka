@@ -7266,9 +7266,9 @@ header {
   background-color: #093552; }
 
 #main-nav {
-  background-color: #093552; }
+  font-weight: 400; }
 
-#main-nav, .et-tab-nav {
+#main-nav, .et-tab-nav, .improv-combo-tab-nav {
   margin: 0 0 2em 0; }
 
 .navbar-nav .nav-link {
@@ -7279,12 +7279,22 @@ header {
 .music-notation-streamfield {
   overflow-x: scroll; }
 
+.home-page-body {
+  background-position: 0 0;
+  background-size: cover; }
+
 .et-sidebar-nav .disabled {
   color: #000; }
 
 .et-sidebar-nav__nested-nav {
   margin: 0 0 0 1em; }
+  .et-sidebar-nav__nested-nav .nav-link {
+    font-weight: 400; }
 
 .et-element-nav__nested-el {
   font-weight: 400; }
+
+body {
+  position: relative;
+  min-height: 100vh; }
 

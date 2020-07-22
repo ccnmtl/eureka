@@ -22,6 +22,8 @@
         <div class="col-md-9">
             <h1>{{ page.title }}</h1>
 
+            <hr/>
+
             <nav class="row et-element-nav">
                 {% for block in page.body %}
                 <div class="col-md-4">
@@ -52,7 +54,7 @@
             <nav class="et-sidebar-nav" aria-label="Ear training elements">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ page.get_parent.get_parent.get_url }}">
                             {{ page.get_parent.get_parent }}
                         </a>
                     </li>

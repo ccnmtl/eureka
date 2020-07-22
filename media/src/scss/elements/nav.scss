@@ -8,11 +8,11 @@ header {
     @extend .navbar-expand-lg;
     @extend .d-print-none;
     @extend .serif;
-    background-color: $eureka-blue-primary;
+    font-weight: 400;
 }
 
 
-#main-nav, .et-tab-nav {
+#main-nav, .et-tab-nav, .improv-combo-tab-nav {
     margin: 0 0 2em 0;
 }
 
