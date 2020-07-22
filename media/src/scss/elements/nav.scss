@@ -7,10 +7,14 @@ header {
     @extend .navbar-dark;
     @extend .navbar-expand-lg;
     @extend .d-print-none;
-    @extend .serif;
+    @extend .sans-serif;
     font-weight: 400;
 }
 
+.navbar-brand {
+    @extend .serif;
+    font-weight: 700;
+}
 
 #main-nav, .et-tab-nav, .improv-combo-tab-nav {
     margin: 0 0 2em 0;
@@ -22,3 +26,4 @@ header {
         text-decoration: underline;
     }
 }
+

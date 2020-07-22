@@ -3,15 +3,13 @@
 
 {% block body_class %}home-page-body{% endblock %}
 {% block body_style  %}style="background-image: url({{ STATIC_URL }}img/cello_suite_anna_magdalena_bach.jpg);"{% endblock %}
+{% block main_class %}home-page-main{% endblock %}
 
 {% block content %}
-<div id="home-page-container" class="container">
-    <div class="row">
-        <div class="col-12">
-            <h1>{{ page.title }}</h1>
-            {% include_block page.body %}
-        </div>
-    </div>
+<div id="home-page-container">
+    <h1>{{ page.title }}</h1>
+    <p>A Digital Guidebook for Improvisation Leadership in the Ear Training Classroom</p>
+    <a href="#">Get Started</a>
 </div>
 {% endblock %}
 

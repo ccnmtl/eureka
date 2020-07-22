@@ -2,3 +2,35 @@
     background-position: 0 0;
     background-size: cover;
 }
+
+.home-page-main {
+    height: calc(100vh - 88px);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin: 0 1em;
+    @include media-breakpoint-up(md) {
+        margin: 0 150px;
+    }
+}
+
+#home-page-container {
+    color: #FFFFFF;
+    max-width: 775px;
+
+    h1 {
+        font-size: 5rem;
+        text-transform: lowercase;
+        margin-bottom: 1rem;
+    }
+    p {
+        @extend .serif;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+    a {
+        @extend .btn;
+        @extend .btn-light;
+        @extend .btn-lg;
+    }
+}
