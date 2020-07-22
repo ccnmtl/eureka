@@ -33,6 +33,73 @@ def create_ear_training_elements(et_root_page, element_list):
             imp_type_page = EarTrainingElementPage(
                 title='{} with {}'.format(el, improv_type)
             )
+            imp_type_page.body = [('topic', {
+                'title': 'Out of Tempo',
+                'musical_elements': [{
+                    'element_title': 'Beginner',
+                    'content': StreamValue(
+                        stream_block=StreamBlock([
+                            ('rich_text', RichTextBlock()),
+                        ]),
+                        stream_data=[
+                            ('rich_text', RichText('<p>TBD</p>')),
+                        ]
+                    )
+                }, {
+                    'element_title': 'Intermediate',
+                    'content': StreamValue(
+                        stream_block=StreamBlock([
+                            ('rich_text', RichTextBlock()),
+                        ]),
+                        stream_data=[
+                            ('rich_text', RichText('<p>TBD</p>')),
+                        ]
+                    )
+                }, {
+                    'element_title': 'Advanced',
+                    'content': StreamValue(
+                        stream_block=StreamBlock([
+                            ('rich_text', RichTextBlock()),
+                        ]),
+                        stream_data=[
+                            ('rich_text', RichText('<p>TBD</p>')),
+                        ]
+                    )
+                }]
+            }), ('topic', {
+                'title': 'In Tempo',
+                'musical_elements': [{
+                    'element_title': 'Beginner',
+                    'content': StreamValue(
+                        stream_block=StreamBlock([
+                            ('rich_text', RichTextBlock()),
+                        ]),
+                        stream_data=[
+                            ('rich_text', RichText('<p>TBD</p>')),
+                        ]
+                    )
+                }, {
+                    'element_title': 'Intermediate',
+                    'content': StreamValue(
+                        stream_block=StreamBlock([
+                            ('rich_text', RichTextBlock()),
+                        ]),
+                        stream_data=[
+                            ('rich_text', RichText('<p>TBD</p>')),
+                        ]
+                    )
+                }, {
+                    'element_title': 'Advanced',
+                    'content': StreamValue(
+                        stream_block=StreamBlock([
+                            ('rich_text', RichTextBlock()),
+                        ]),
+                        stream_data=[
+                            ('rich_text', RichText('<p>TBD</p>')),
+                        ]
+                    )
+                }]
+            })]
             element_container.add_child(instance=imp_type_page)
             imp_type_page.save_revision().publish()
 
@@ -85,7 +152,7 @@ class Command(BaseCommand):
 
         # ET 1
         et_one = EarTrainingLevelPage(
-            title='Introduction to Ear Training One',
+            title='Ear Training One',
             show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
@@ -93,8 +160,9 @@ class Command(BaseCommand):
         et_one.save_revision().publish()
 
         et_one_elements = [
-            'Tempo', 'Dynamics', 'Texture', 'Meter', 'Rhythm', 'Scales',
-            'Interval', 'Melody', 'Triads'
+            'Tempo', 'Dynamics', 'Texture', 'Meter', 'Rhythm Grid', 'Scales',
+            'Intervals', 'Melody', 'Triads', 'Harmonic Progression',
+            'Seventh Chords'
         ]
         create_ear_training_elements(et_one, et_one_elements)
 
@@ -123,7 +191,7 @@ class Command(BaseCommand):
 
         # ET 2
         et_two = EarTrainingLevelPage(
-            title='Introduction to Ear Training Two',
+            title='Ear Training Two',
             show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
@@ -132,13 +200,14 @@ class Command(BaseCommand):
 
         et_two_elements = [
             'Tempo', 'Dynamics', 'Meter', 'Rhythm', 'Scales',
-            'Interval', 'Melody', 'Triads'
+            'Intervals', 'Melody', 'Triads', 'Harmonic Progression',
+            'Seventh Chords'
         ]
         create_ear_training_elements(et_two, et_two_elements)
 
         # ET 3
         et_three = EarTrainingLevelPage(
-            title='Introduction to Ear Training Three',
+            title='Ear Training Three',
             show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
@@ -146,14 +215,15 @@ class Command(BaseCommand):
         et_three.save_revision().publish()
 
         et_three_elements = [
-            'Tempo', 'Meter', 'Rhythm', 'Scales',
-            'Interval', 'Melody', 'Triads'
+            'Accents', 'Ties', 'Syncopation', 'Scales',
+            'Intervals', 'Melody', 'Triads', 'Harmonic Progression',
+            'Seventh Chords'
         ]
         create_ear_training_elements(et_three, et_three_elements)
 
         # ET 4
         et_four = EarTrainingLevelPage(
-            title='Introduction to Ear Training Four',
+            title='Ear Training Four',
             show_in_menus=True,
             body=[('rich_text', RichText('<p>TBD</p>'))]
         )
@@ -161,8 +231,9 @@ class Command(BaseCommand):
         et_four.save_revision().publish()
 
         et_four_elements = [
-            'Tempo', 'Meter', 'Rhythm', 'Scales',
-            'Interval', 'Melody', 'Triads'
+            'Asymmetric Meters', 'Borrowed Divisions', 'Chromatic Intervals',
+            'Scales', 'Melody', 'Triads', 'Augmented Sixth Chords',
+            'Harmonic Progression'
         ]
         create_ear_training_elements(et_four, et_four_elements)
 
