@@ -23,7 +23,7 @@ class ViewTest(WagtailPageTests):
     def test_improvisation_type_index_page(self):
         page = ImprovisationTypeIndexPage.objects.first()
         response = self.client.get(page.get_url())
-        self.assertEquals(response.status_code, 200)
+        self.assertRedirects(response, page.get_children().first().get_url())
 
     def test_improvisation_type_page(self):
         page = ImprovisationTypePage.objects.first()
