@@ -1,5 +1,19 @@
+header {
+    background-color: $eureka-blue-primary;
+}
+
 #main-nav {
-    margin: 0 0 1em 0;
+    @extend .navbar;
+    @extend .navbar-dark;
+    @extend .navbar-expand-lg;
+    @extend .d-print-none;
+    @extend .serif;
+    background-color: $eureka-blue-primary;
+}
+
+
+#main-nav, .et-tab-nav {
+    margin: 0 0 2em 0;
 }
 
 .navbar-nav .nav-link {

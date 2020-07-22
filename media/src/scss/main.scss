@@ -1,10 +1,19 @@
 // Bootstrap overrides must precede the Bootstrap import
 $blue: #0056b2;
 
+// Custom colors
+$eureka-blue-primary: #093552;
+$eureka-blue-secondary: #41516C;
+$eureka-brown-primary: #555555;
+$eureka-brown-secondary: #D2D2C0;
+$eureka-white-primary: #EFEFEF;
+$eureka-white-primary: #F9F9F9;
+
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
 // Custom styles
+@import "./elements/typography";
 @import "./elements/nav";
 @import "./elements/music-notation";
 @import "./pages/ear_training";
