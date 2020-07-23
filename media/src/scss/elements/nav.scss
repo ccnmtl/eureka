@@ -1,5 +1,23 @@
+header {
+    background-color: $eureka-blue-primary;
+}
+
 #main-nav {
-    margin: 0 0 1em 0;
+    @extend .navbar;
+    @extend .navbar-dark;
+    @extend .navbar-expand-lg;
+    @extend .d-print-none;
+    @extend .sans-serif;
+    font-weight: 400;
+}
+
+.navbar-brand {
+    @extend .serif;
+    font-weight: 700;
+}
+
+#main-nav, .improv-type-nav, .et-tab-nav, .improv-combo-tab-nav {
+    margin: 0 0 2em 0;
 }
 
 .navbar-nav .nav-link {
@@ -8,3 +26,4 @@
         text-decoration: underline;
     }
 }
+

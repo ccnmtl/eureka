@@ -4,4 +4,11 @@
 
 .et-sidebar-nav__nested-nav {
     margin: 0 0 0 1em;
+    & .nav-link {
+        font-weight: 400;
+    }
+}
+
+.et-element-nav__nested-el {
+    font-weight: 400;
 }

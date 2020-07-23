@@ -1,8 +1,9 @@
 from django.http import Http404
+from django.db.models import CharField
 from django.shortcuts import redirect
 from eureka.main.blocks import EarTrainingElementBlock
 from wagtail.admin.edit_handlers import (
-    StreamFieldPanel
+    StreamFieldPanel, FieldPanel
 )
 from wagtail.core.blocks import (
     RichTextBlock
@@ -63,6 +64,15 @@ class BasicPage(Page, MenuPageMixin):
 
 # Improv Types
 class ImprovisationTypeIndexPage(Page, MenuPageMixin):
+    def serve(self, request):
+        """Override to redirect to child page"""
+        child = self.get_first_child()
+        if child:
+            return redirect(
+                child.get_url(request=request, current_site=self.get_site()))
+
+        raise Http404
+
     class Meta:
         verbose_name = "Improvisation Type Index Page"
 
@@ -79,6 +89,12 @@ class ImprovisationTypePage(Page, MenuPageMixin):
         ('rich_text', RichTextBlock()),
         ('image', ImageChooserBlock())
     ])
+
+    def get_context(self, request, *args, **kwargs):
+        ctx = super().get_context(request, *args, **kwargs)
+        ctx['improv_type_pages'] = pack_nav_pages(
+            [p.specific for p in self.get_siblings()], self)
+        return ctx
 
     class Meta:
         verbose_name = "Improvisation Type Page"
@@ -108,6 +124,7 @@ class EarTrainingIndexPage(Page, MenuPageMixin):
 
 
 class EarTrainingLevelPage(Page, MenuPageMixin):
+    tab_title = CharField(max_length=32)
     body = StreamField([
         ('rich_text', RichTextBlock()),
         ('image', ImageChooserBlock())
@@ -123,6 +140,7 @@ class EarTrainingLevelPage(Page, MenuPageMixin):
         verbose_name = "Ear Training Level Page"
 
     content_panels = Page.content_panels + [
+        FieldPanel('tab_title'),
         StreamFieldPanel('body')
     ]
 
