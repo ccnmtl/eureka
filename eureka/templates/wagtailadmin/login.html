@@ -23,7 +23,7 @@
         {% if CAS_BASE %}
         <form method="get" action="{{ CAS_BASE }}cas/login">
             {% csrf_token %}
-            <input type="hidden" name="destination" value="https://{{ request.get_host }}/accounts/caslogin/" />
+            <input type="hidden" name="destination" value="https://{{ request.get_host }}/accounts/caslogin/?next=/" />
             <h1 class="display-h4 mt-5 text-center">Eureka Editor CMS</h1>
             <div class="text-center mt-5"><input class="btn btn-primary btn-lg" type="submit" value="Please Log In" /></div>
         </form>
