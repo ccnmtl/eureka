@@ -18,3 +18,22 @@ h1, h2, h3, h4, h5, h6, nav {
     @extend .serif;
 }
 
+a:link {
+    color: #414F6D;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00479E;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #575738;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #4F4F4F;
+    text-decoration: none;
+}

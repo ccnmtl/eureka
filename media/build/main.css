@@ -7307,6 +7307,22 @@ a.text-dark:hover, a.text-dark:focus {
   font-family: 'Roboto Slab', serif;
   font-weight: 700; }
 
+a:link {
+  color: #414F6D;
+  text-decoration: none; }
+
+a:hover {
+  color: #00479E;
+  text-decoration: underline; }
+
+a:active {
+  color: #575738;
+  text-decoration: underline; }
+
+a:visited {
+  color: #4F4F4F;
+  text-decoration: none; }
+
 header {
   background-color: #093552; }
 
