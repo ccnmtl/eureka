@@ -13,13 +13,9 @@ class ImageBlock(StructBlock):
     attribution data
     """
     image_file = ImageChooserBlock(required=True)
-    caption_block = RichTextBlock(
-                        help_text='Caption block for the image',
-                        required=False)
     caption = CharBlock(
                         help_text='Caption for the image',
                         required=False)
-    attribution = CharBlock(required=False)
 
     class Meta:
         icon = 'image'
@@ -56,7 +52,7 @@ class EarTrainingElementBlock(StructBlock):
                         'hr', 'link', 'document_link'
                     ]
                 )),
-                ('image', ImageChooserBlock()),
+                ('image', ImageBlock()),
                 ('music_example', MusicBlock()),
                 ('video', VideoEmbedBlock())
             ], icon='cogs'))
