@@ -1,4 +1,3 @@
-from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.core.blocks import (
     CharBlock, TextBlock, RichTextBlock, StructBlock, StreamBlock, ListBlock,
@@ -13,26 +12,16 @@ class ImageBlock(StructBlock):
     attribution data
     """
     image_file = ImageChooserBlock(required=True)
-    caption_block = RichTextBlock(
-                        help_text='Caption block for the image',
+    title = CharBlock(
+                        help_text='Title for the image',
                         required=False)
     caption = CharBlock(
                         help_text='Caption for the image',
                         required=False)
-    attribution = CharBlock(required=False)
 
     class Meta:
         icon = 'image'
         template = "main/blocks/image_block.html"
-
-
-class MusicBlock(StructBlock):
-    file = DocumentChooserBlock()
-    caption = CharBlock(required=False)
-
-    class Meta:
-        icon = 'image'
-        template = "main/blocks/music_block.html"
 
 
 class VideoEmbedBlock(StructBlock):
@@ -50,9 +39,13 @@ class EarTrainingElementBlock(StructBlock):
         StructBlock([
             ('element_title', CharBlock()),
             ('content', StreamBlock([
-                ('rich_text', RichTextBlock()),
-                ('image', ImageChooserBlock()),
-                ('music_example', MusicBlock()),
+                ('rich_text', RichTextBlock(
+                    features=[
+                        'bold', 'italic', 'ol', 'li',
+                        'hr', 'link', 'document_link'
+                    ]
+                )),
+                ('image', ImageBlock()),
                 ('video', VideoEmbedBlock())
             ], icon='cogs'))
         ])

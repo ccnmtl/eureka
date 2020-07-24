@@ -299,7 +299,7 @@ template {
   display: none !important; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .h4, .img-title, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2; }
@@ -313,7 +313,7 @@ h2, .h2 {
 h3, .h3 {
   font-size: 1.75rem; }
 
-h4, .h4 {
+h4, .h4, .img-title {
   font-size: 1.5rem; }
 
 h5, .h5 {
@@ -7303,9 +7303,25 @@ a.text-dark:hover, a.text-dark:focus {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; }
 
-.serif, h1, h2, h3, h4, h5, h6, nav, .navbar-brand, #home-page-container p {
+.serif, h1, h2, h3, h4, h5, h6, nav, .img-title, .navbar-brand, #home-page-container p {
   font-family: 'Roboto Slab', serif;
   font-weight: 700; }
+
+a:link {
+  color: #414F6D;
+  text-decoration: none; }
+
+a:hover {
+  color: #00479E;
+  text-decoration: underline; }
+
+a:active {
+  color: #575738;
+  text-decoration: underline; }
+
+a:visited {
+  color: #4F4F4F;
+  text-decoration: none; }
 
 header {
   background-color: #093552; }

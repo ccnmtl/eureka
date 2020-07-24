@@ -1,16 +1,16 @@
 from django.http import Http404
-from django.db.models import CharField
+from django.db import models
 from django.shortcuts import redirect
-from eureka.main.blocks import EarTrainingElementBlock
+from eureka.main.blocks import EarTrainingElementBlock, ImageBlock
 from wagtail.admin.edit_handlers import (
-    StreamFieldPanel, FieldPanel
+    StreamFieldPanel, FieldPanel, PageChooserPanel
 )
+from wagtail.contrib.table_block.blocks import TableBlock
 from wagtail.core.blocks import (
     RichTextBlock
 )
 from wagtail.core.fields import StreamField
 from wagtail.core.models import Page
-from wagtail.images.blocks import ImageChooserBlock
 from wagtailmenus.models import MenuPageMixin
 from wagtailmenus.panels import menupage_panel
 
@@ -33,8 +33,20 @@ def pack_nav_pages(page_list, active_page):
 
 
 class HomePage(Page, MenuPageMixin):
+    home_page_link = models.ForeignKey(
+        'wagtailcore.Page',
+        on_delete=models.SET_NULL,
+        related_name='+',
+        null=True,
+        blank=True
+    )
+
     class Meta:
         verbose_name = "Homepage"
+
+    content_panels = Page.content_panels + [
+       PageChooserPanel('home_page_link')
+    ]
 
     settings_panels = Page.settings_panels + [
         menupage_panel
@@ -47,7 +59,7 @@ class HomePage(Page, MenuPageMixin):
 class BasicPage(Page, MenuPageMixin):
     body = StreamField([
         ('rich_text', RichTextBlock()),
-        ('image', ImageChooserBlock())
+        ('image', ImageBlock())
     ])
 
     class Meta:
@@ -87,7 +99,7 @@ class ImprovisationTypeIndexPage(Page, MenuPageMixin):
 class ImprovisationTypePage(Page, MenuPageMixin):
     body = StreamField([
         ('rich_text', RichTextBlock()),
-        ('image', ImageChooserBlock())
+        ('image', ImageBlock())
     ])
 
     def get_context(self, request, *args, **kwargs):
@@ -124,10 +136,10 @@ class EarTrainingIndexPage(Page, MenuPageMixin):
 
 
 class EarTrainingLevelPage(Page, MenuPageMixin):
-    tab_title = CharField(max_length=32)
+    tab_title = models.CharField(max_length=32)
     body = StreamField([
         ('rich_text', RichTextBlock()),
-        ('image', ImageChooserBlock())
+        ('image', ImageBlock())
     ])
 
     def get_context(self, request, *args, **kwargs):
@@ -218,7 +230,8 @@ class ImprovisationCombinationIndexPage(Page, MenuPageMixin):
 class ImprovisationCombinationPage(Page, MenuPageMixin):
     body = StreamField([
         ('rich_text', RichTextBlock()),
-        ('image', ImageChooserBlock())
+        ('table', TableBlock(template='main/blocks/table_block.html')),
+        ('image', ImageBlock())
     ])
 
     def get_context(self, request, *args, **kwargs):
