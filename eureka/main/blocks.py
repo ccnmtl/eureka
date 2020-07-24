@@ -50,7 +50,12 @@ class EarTrainingElementBlock(StructBlock):
         StructBlock([
             ('element_title', CharBlock()),
             ('content', StreamBlock([
-                ('rich_text', RichTextBlock()),
+                ('rich_text', RichTextBlock(
+                    features=[
+                        'bold', 'italic', 'ol', 'li',
+                        'hr', 'link', 'document_link'
+                    ]
+                )),
                 ('image', ImageChooserBlock()),
                 ('music_example', MusicBlock()),
                 ('video', VideoEmbedBlock())
