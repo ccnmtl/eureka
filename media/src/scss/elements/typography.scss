@@ -18,6 +18,11 @@ h1, h2, h3, h4, h5, h6, nav {
     @extend .serif;
 }
 
+.img-title {
+    @extend .h4;
+    @extend .serif;
+}
+
 a:link {
     color: #414F6D;
     text-decoration: none;

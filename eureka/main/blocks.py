@@ -1,4 +1,3 @@
-from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.core.blocks import (
     CharBlock, TextBlock, RichTextBlock, StructBlock, StreamBlock, ListBlock,
@@ -13,6 +12,9 @@ class ImageBlock(StructBlock):
     attribution data
     """
     image_file = ImageChooserBlock(required=True)
+    title = CharBlock(
+                        help_text='Title for the image',
+                        required=False)
     caption = CharBlock(
                         help_text='Caption for the image',
                         required=False)

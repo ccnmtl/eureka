@@ -1,18 +1,11 @@
 {% load wagtailimages_tags %}
 
 <figure>
+    {% if self.title %}<span class="img-title">{{ self.title }}</span>{% endif %}
     {% image self.image_file original class="img-fluid"  %}
-    {% if self.caption or self.attribution or self.caption_block %}
+    {% if self.caption %}
     <figcaption>
-        {% if self.caption_block %}
-            {{ self.caption_block }}
-        {% endif %}
-        {% if self.caption %}
-            {{ self.caption|safe }}
-        {% endif %}
-        {% if self.attribution %}
-            {{ self.attribution }}
-        {% endif %}
+        {{ self.caption }}
     </figcaption>
     {% endif %}
 </figure>

@@ -11,7 +11,6 @@ from wagtail.core.blocks import (
 )
 from wagtail.core.fields import StreamField
 from wagtail.core.models import Page
-from wagtail.images.blocks import ImageChooserBlock
 from wagtailmenus.models import MenuPageMixin
 from wagtailmenus.panels import menupage_panel
 
