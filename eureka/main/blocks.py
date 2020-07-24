@@ -22,15 +22,6 @@ class ImageBlock(StructBlock):
         template = "main/blocks/image_block.html"
 
 
-class MusicBlock(StructBlock):
-    file = DocumentChooserBlock()
-    caption = CharBlock(required=False)
-
-    class Meta:
-        icon = 'image'
-        template = "main/blocks/music_block.html"
-
-
 class VideoEmbedBlock(StructBlock):
     url = URLBlock()
     description = CharBlock(required=False)
@@ -53,7 +44,6 @@ class EarTrainingElementBlock(StructBlock):
                     ]
                 )),
                 ('image', ImageBlock()),
-                ('music_example', MusicBlock()),
                 ('video', VideoEmbedBlock())
             ], icon='cogs'))
         ])
