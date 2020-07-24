@@ -5,6 +5,7 @@ from eureka.main.blocks import EarTrainingElementBlock
 from wagtail.admin.edit_handlers import (
     StreamFieldPanel, FieldPanel, PageChooserPanel
 )
+from wagtail.contrib.table_block.blocks import TableBlock
 from wagtail.core.blocks import (
     RichTextBlock
 )
@@ -230,6 +231,7 @@ class ImprovisationCombinationIndexPage(Page, MenuPageMixin):
 class ImprovisationCombinationPage(Page, MenuPageMixin):
     body = StreamField([
         ('rich_text', RichTextBlock()),
+        ('table', TableBlock()),
         ('image', ImageChooserBlock())
     ])
 
