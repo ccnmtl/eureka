@@ -184,6 +184,12 @@ class EarTrainingElementContainerPage(Page, MenuPageMixin):
 
 class EarTrainingElementPage(Page, MenuPageMixin):
     body = StreamField([
+        ('rich_text', RichTextBlock(
+            features=[
+                'bold', 'italic', 'ol', 'ul',
+                'hr', 'link', 'document_link'
+            ]
+        )),
         ('topic', EarTrainingElementBlock())
     ])
 
