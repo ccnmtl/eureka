@@ -26,6 +26,7 @@
 
             <nav class="row et-element-nav">
                 {% for block in page.body %}
+                {% if block.value.title %}
                 <div class="col-md-4">
                     <ul class="nav flex-column">
                         <li class="nav-item et-element-nav__top-el"><a href="#{{ block.id }}">{{ block.value.title }}</a>
@@ -37,17 +38,22 @@
                         </li>
                     </ul>
                 </div>
+                {% endif %}
                 {% endfor %}
             </nav>
 
             <hr/>
 
             {% for block in page.body %}
-                <h2 id="{{ block.id }}">{{ block.value.title }}</h2>
-                {% for el in block.value.musical_elements %}
-                    <h3 id="{{ block.id }}-{{ forloop.counter }}">{{ el.element_title }}</h3>
-                    {% include_block el.content %}
-                {% endfor %}
+                {% if block.value.title %}
+                    <h2 id="{{ block.id }}">{{ block.value.title }}</h2>
+                    {% for el in block.value.musical_elements %}
+                        <h3 id="{{ block.id }}-{{ forloop.counter }}">{{ el.element_title }}</h3>
+                        {% include_block el.content %}
+                    {% endfor %}
+                {% else %}
+                    {% include_block block %}
+                {% endif %}
             {% endfor %}
         </div>
         <div class="col-md-3">

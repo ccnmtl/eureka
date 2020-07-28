@@ -41,7 +41,7 @@ class EarTrainingElementBlock(StructBlock):
             ('content', StreamBlock([
                 ('rich_text', RichTextBlock(
                     features=[
-                        'bold', 'italic', 'ol', 'li',
+                        'bold', 'italic', 'ol', 'ul',
                         'hr', 'link', 'document_link'
                     ]
                 )),
