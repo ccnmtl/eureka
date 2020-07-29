@@ -34,21 +34,23 @@ class VideoEmbedBlock(StructBlock):
 
 
 class EarTrainingElementBlock(StructBlock):
-    title = CharBlock()
+    title = CharBlock(required=False)
     musical_elements = ListBlock(
         StructBlock([
-            ('element_title', CharBlock()),
+            ('element_title', CharBlock(required=False)),
             ('content', StreamBlock([
                 ('rich_text', RichTextBlock(
                     features=[
                         'bold', 'italic', 'ol', 'ul',
                         'hr', 'link', 'document_link'
-                    ]
+                    ],
+                    required=False
                 )),
-                ('image', ImageBlock()),
-                ('video', VideoEmbedBlock())
-            ], icon='cogs'))
-        ])
+                ('image', ImageBlock(required=False)),
+                ('video', VideoEmbedBlock(required=False))
+            ], icon='cogs', required=False))
+        ]),
+        required=False
     )
 
 
