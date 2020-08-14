@@ -7299,13 +7299,16 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-.sans-serif, html, #main-nav {
+.sans-serif, html, #main-nav, .et-tab-nav__link, .et-element-nav, .et-sidebar-nav {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; }
 
 .serif, h1, h2, h3, h4, h5, h6, nav, .img-title, .navbar-brand, #home-page-container p {
   font-family: 'Roboto Slab', serif;
   font-weight: 700; }
+
+h1, h2 {
+  color: #003655; }
 
 a:link {
   color: #414F6D;
@@ -7324,7 +7327,7 @@ a:visited {
   text-decoration: none; }
 
 header {
-  background-color: #093552; }
+  background-color: #003655; }
 
 #main-nav {
   font-weight: 400; }
@@ -7332,8 +7335,11 @@ header {
 .navbar-brand {
   font-weight: 700; }
 
-#main-nav, .improv-type-nav, .et-tab-nav, .improv-combo-tab-nav {
+.improv-type-nav, .et-tab-nav, .improv-combo-tab-nav {
   margin: 0 0 2em 0; }
+
+#maincontent > .container {
+  padding-top: 2em; }
 
 .navbar-nav .nav-link {
   color: #FFFFFF !important; }
@@ -7361,6 +7367,7 @@ header {
   color: #FFFFFF;
   max-width: 775px; }
   #home-page-container h1 {
+    color: #FFFFFF;
     font-size: 5rem;
     text-transform: lowercase;
     margin-bottom: 1rem; }
@@ -7368,18 +7375,52 @@ header {
     margin-bottom: 1rem;
     font-size: 2rem; }
 
-.et-sidebar-nav .disabled {
-  color: #000; }
+.et-tab-nav__link {
+  color: #FFFFFF !important;
+  background-color: #00639E;
+  margin-right: 0.5rem;
+  font-weight: 700;
+  border-top-left-radius: 0.5rem !important;
+  border-top-right-radius: 0.5rem !important; }
+  .et-tab-nav__link.active {
+    color: #00639E !important;
+    background-color: #FFFFFF; }
+
+.et-element-nav {
+  font-weight: 700; }
+
+.et-element-nav__top-el a {
+  color: #003655 !important; }
+
+.et-element-nav__nested-el a {
+  font-weight: 400;
+  color: #00639E !important; }
+
+.et-sidebar-nav {
+  color: #666666; }
+  .et-sidebar-nav .et-sidebar-nav__current-items {
+    color: #00639E; }
+  .et-sidebar-nav .disabled {
+    font-weight: 700;
+    color: #003655; }
+    .et-sidebar-nav .disabled.nav-link {
+      padding-bottom: 0; }
 
 .et-sidebar-nav__nested-nav {
-  margin: 0 0 0 1em; }
+  margin: 0 0 0 2.2em; }
   .et-sidebar-nav__nested-nav .nav-link {
-    font-weight: 400; }
-
-.et-element-nav__nested-el {
-  font-weight: 400; }
+    padding: 0; }
+  .et-sidebar-nav__nested-nav ul {
+    list-style: disc outside none;
+    list-style: initial; }
 
 body {
   position: relative;
-  min-height: 100vh; }
+  min-height: 100vh;
+  background-position: 0 0;
+  background-size: cover;
+  background-attachment: fixed; }
+
+main > div.container {
+  background-color: #FFFFFF; }
 

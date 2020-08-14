@@ -2,12 +2,15 @@
 $blue: #0056b2;
 
 // Custom colors
-$eureka-blue-primary: #093552;
-$eureka-blue-secondary: #41516C;
+//$eureka-blue-primary: #093552;
+//$eureka-blue-secondary: #41516C;
+$eureka-blue-primary: #003655;
+$eureka-blue-secondary: #00639E;
 $eureka-brown-primary: #555555;
 $eureka-brown-secondary: #D2D2C0;
 $eureka-white-primary: #EFEFEF;
 $eureka-white-primary: #F9F9F9;
+$eureka-grey-primary: #666666;
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
@@ -23,4 +26,11 @@ $eureka-white-primary: #F9F9F9;
 body {
     position: relative;
     min-height: 100vh;
+    background-position: 0 0;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main > div.container {
+    background-color: #FFFFFF;
 }
