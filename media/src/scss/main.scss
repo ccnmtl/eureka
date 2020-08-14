@@ -34,3 +34,15 @@ body {
 main > div.container {
     background-color: #FFFFFF;
 }
+
+.container, .container-sm, .container-md, .container-lg, .container-xl {
+    @include media-breakpoint-up(xl) {
+        // Default is width is 1140px
+        // Default padding is 15px
+        $xl-width: 1400px;
+        $xl-padding: (($xl-width - 1140px) / 2) + 15px;
+        max-width: $xl-width;
+        padding-left: $xl-padding;
+        padding-right: $xl-padding;
+    }
+}

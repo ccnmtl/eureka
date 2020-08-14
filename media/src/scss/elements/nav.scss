@@ -1,5 +1,9 @@
-header {
+header, footer {
     background-color: $eureka-blue-primary;
+}
+
+footer {
+    padding: 1em 0;
 }
 
 #main-nav {
@@ -21,7 +25,12 @@ header {
 }
 
 #maincontent > .container {
-    padding-top: 2em;
+    &:first-of-type {
+        padding-top: 2em;
+    }
+    &:last-of-type {
+        padding-bottom: 2em;
+    }
 }
 
 .navbar-nav .nav-link {

@@ -34,13 +34,18 @@
     @extend .sans-serif;
     color: $eureka-grey-primary;
 
-    .et-sidebar-nav__current-items {
-        color: $eureka-blue-secondary;
+    a.nav-link {
+        color: $eureka-grey-primary;
+
+        &:hover {
+            font-weight: 700;
+            color: $eureka-blue-secondary !important;
+        }
     }
 
     .disabled {
         font-weight: 700;
-        color: $eureka-blue-primary;
+        color: $eureka-blue-secondary !important;
         &.nav-link {
             padding-bottom: 0;
         }

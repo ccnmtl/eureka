@@ -18,8 +18,20 @@ h1, h2, h3, h4, h5, h6, nav {
     @extend .serif;
 }
 
-h1, h2 {
-    color: $eureka-blue-primary;
+#maincontent {
+    h1 {
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin: 2rem 0;
+    }
 }
 
 .img-title {
