@@ -7299,7 +7299,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-.sans-serif, html, #main-nav, .et-tab-nav__link, .et-element-nav, .et-sidebar-nav {
+.sans-serif, html, #main-nav, .et-tab-nav__link, .improv-combo-tab-nav__link, .et-element-nav, .et-sidebar-nav {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; }
 
@@ -7389,14 +7389,14 @@ footer {
     margin-bottom: 1rem;
     font-size: 2rem; }
 
-.et-tab-nav__link {
+.et-tab-nav__link, .improv-combo-tab-nav__link {
   color: #FFFFFF !important;
   background-color: #00639E;
   margin-right: 0.5rem;
   font-weight: 700;
   border-top-left-radius: 0.5rem !important;
   border-top-right-radius: 0.5rem !important; }
-  .et-tab-nav__link.active {
+  .et-tab-nav__link.active, .improv-combo-tab-nav__link.active {
     color: #00639E !important;
     background-color: #FFFFFF; }
 
@@ -7438,8 +7438,14 @@ body {
   background-size: cover;
   background-attachment: fixed; }
 
+footer {
+  position: relative;
+  width: 100%;
+  bottom: 0; }
+
 main > div.container {
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  min-height: calc(100vh - 170px); }
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {

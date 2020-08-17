@@ -31,8 +31,15 @@ body {
     background-attachment: fixed;
 }
 
+footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
 main > div.container {
     background-color: #FFFFFF;
+    min-height: calc(100vh - 170px);
 }
 
 .container, .container-sm, .container-md, .container-lg, .container-xl {
