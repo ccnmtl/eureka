@@ -41,7 +41,7 @@
 
 
   </head>
-  <body class="{% block body_class %}{% endblock %}" {% block body_style %}{% endblock %}>
+  <body class="{% block body_class %}{% endblock %}" {% block body_style %}style="background-image: url({{ STATIC_URL }}img/light-blue-bach-ground.png);"{% endblock %}>
     <header>
         <!-- skippy -->
         <a href="#maincontent" class="skippy focus-none sr-only sr-only-focusable" id="contentjump">
@@ -64,7 +64,24 @@
     {% block content %}{% endblock %}
     </main>
     
-    <footer class="container">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="https://music.columbia.edu">
+                        <img src="{{ STATIC_URL }}img/music-dept-logo.png" alt="Columbia University, Department of Music"/>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    {# Spacer #}
+                </div>
+                <div class="col-md-4">
+                    <a href="https://ctl.columbia.edu">
+                        <img src="{{ STATIC_URL }}img/ctl-logo-white.svg" alt="Center for Teaching and Learning, Columbia University"/>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
     
     <nav aria-label="Wagtail User Menu">

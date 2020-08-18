@@ -9,15 +9,13 @@
                 <ul class="nav nav-tabs">
                     {% for p in et_level_nav %}
                     <li class="nav-item">
-                        <a class="nav-link{% if p.active %} active{% endif %}" href="{% if p.active %}#{% else %}{{ p.page.get_url }}{% endif %}">{{ p.page.specific.tab_title }}</a>
+                        <a class="et-tab-nav__link nav-link{% if p.active %} active{% endif %}" href="{% if p.active %}#{% else %}{{ p.page.get_url }}{% endif %}">{{ p.page.specific.tab_title }}</a>
                     </li>
                     {% endfor%}
                 </ul>
             </nav>
         </div>
     </div>
-</div>
-<div class="container">
     <div class="row">
         <div class="col-md-9">
             <h1>{{ page.title }}</h1>

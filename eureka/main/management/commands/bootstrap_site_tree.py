@@ -31,7 +31,7 @@ def create_ear_training_elements(et_root_page, element_list):
 
         for improv_type in IMPROV_TYPE_LIST:
             imp_type_page = EarTrainingElementPage(
-                title='{} with {}'.format(el, improv_type)
+                title=improv_type
             )
             imp_type_page.body = [('topic', {
                 'title': 'Out of Tempo',

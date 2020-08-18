@@ -1,5 +1,9 @@
-header {
+header, footer {
     background-color: $eureka-blue-primary;
+}
+
+footer {
+    padding: 1em 0;
 }
 
 #main-nav {
@@ -16,8 +20,17 @@ header {
     font-weight: 700;
 }
 
-#main-nav, .improv-type-nav, .et-tab-nav, .improv-combo-tab-nav {
+.improv-type-nav, .et-tab-nav, .improv-combo-tab-nav {
     margin: 0 0 2em 0;
+}
+
+#maincontent > .container {
+    &:first-of-type {
+        padding-top: 2em;
+    }
+    &:last-of-type {
+        padding-bottom: 2em;
+    }
 }
 
 .navbar-nav .nav-link {
