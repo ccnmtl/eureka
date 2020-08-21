@@ -7299,7 +7299,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-.sans-serif, html, #main-nav, .et-tab-nav__link, .improv-combo-tab-nav__link, .et-element-nav, .et-sidebar-nav {
+.sans-serif, html, #main-nav, .improv-type-nav__link, .et-tab-nav__link, .improv-combo-tab-nav__link, .et-element-nav, .et-sidebar-nav {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; }
 
@@ -7363,6 +7363,17 @@ footer {
   .navbar-nav .nav-link.active {
     text-decoration: underline; }
 
+.improv-type-nav__link, .et-tab-nav__link, .improv-combo-tab-nav__link {
+  color: #FFFFFF !important;
+  background-color: #00639E;
+  margin-right: 0.5rem;
+  font-weight: 700;
+  border-top-left-radius: 0.5rem !important;
+  border-top-right-radius: 0.5rem !important; }
+  .improv-type-nav__link.active, .et-tab-nav__link.active, .improv-combo-tab-nav__link.active {
+    color: #00639E !important;
+    background-color: #FFFFFF; }
+
 .music-notation-streamfield {
   overflow-x: scroll; }
 
@@ -7391,17 +7402,6 @@ footer {
   #home-page-container p {
     margin-bottom: 1rem;
     font-size: 2rem; }
-
-.et-tab-nav__link, .improv-combo-tab-nav__link {
-  color: #FFFFFF !important;
-  background-color: #00639E;
-  margin-right: 0.5rem;
-  font-weight: 700;
-  border-top-left-radius: 0.5rem !important;
-  border-top-right-radius: 0.5rem !important; }
-  .et-tab-nav__link.active, .improv-combo-tab-nav__link.active {
-    color: #00639E !important;
-    background-color: #FFFFFF; }
 
 .et-element-nav {
   font-weight: 700; }

@@ -40,3 +40,18 @@ footer {
     }
 }
 
+// Tab navigation
+.improv-type-nav__link, .et-tab-nav__link, .improv-combo-tab-nav__link {
+    color: #FFFFFF !important;
+    background-color: $eureka-blue-secondary;
+    margin-right: 0.5rem;
+    @extend .sans-serif;
+    font-weight: 700;
+    border-top-left-radius: 0.5rem !important;
+    border-top-right-radius: 0.5rem !important;
+
+    &.active {
+        color: $eureka-blue-secondary !important;
+        background-color: #FFFFFF;
+    }
+}
