@@ -58,3 +58,9 @@ a:visited {
     color: #4F4F4F;
     text-decoration: none;
 }
+
+.rich-text {
+    ol > li > ol > li {
+        list-style: disc;
+    }
+}
