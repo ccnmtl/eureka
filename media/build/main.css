@@ -7344,7 +7344,8 @@ footer {
   padding: 1em 0; }
 
 #main-nav {
-  font-weight: 400; }
+  font-weight: 400;
+  align-items: baseline; }
 
 .navbar-brand {
   font-weight: 700; }
@@ -7382,7 +7383,7 @@ footer {
   background-size: cover; }
 
 .home-page-main {
-  height: calc(100vh - 88px);
+  height: calc(100vh - 155px);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -7448,7 +7449,7 @@ footer {
 
 main > div.container {
   background-color: #FFFFFF;
-  min-height: calc(100vh - 170px); }
+  min-height: calc(100vh - 155px); }
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
