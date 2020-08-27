@@ -7299,7 +7299,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-.sans-serif, html, #main-nav, .et-tab-nav__link, .improv-combo-tab-nav__link, .et-element-nav, .et-sidebar-nav {
+.sans-serif, html, #main-nav, .improv-type-nav__link, .et-tab-nav__link, .improv-combo-tab-nav__link, .et-element-nav, .et-sidebar-nav {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; }
 
@@ -7334,6 +7334,9 @@ a:visited {
   color: #4F4F4F;
   text-decoration: none; }
 
+.rich-text ol > li > ol > li {
+  list-style: disc; }
+
 header, footer {
   background-color: #003655; }
 
@@ -7341,7 +7344,8 @@ footer {
   padding: 1em 0; }
 
 #main-nav {
-  font-weight: 400; }
+  font-weight: 400;
+  align-items: baseline; }
 
 .navbar-brand {
   font-weight: 700; }
@@ -7360,6 +7364,17 @@ footer {
   .navbar-nav .nav-link.active {
     text-decoration: underline; }
 
+.improv-type-nav__link, .et-tab-nav__link, .improv-combo-tab-nav__link {
+  color: #FFFFFF !important;
+  background-color: #00639E;
+  margin-right: 0.5rem;
+  font-weight: 700;
+  border-top-left-radius: 0.5rem !important;
+  border-top-right-radius: 0.5rem !important; }
+  .improv-type-nav__link.active, .et-tab-nav__link.active, .improv-combo-tab-nav__link.active {
+    color: #00639E !important;
+    background-color: #FFFFFF; }
+
 .music-notation-streamfield {
   overflow-x: scroll; }
 
@@ -7368,7 +7383,7 @@ footer {
   background-size: cover; }
 
 .home-page-main {
-  height: calc(100vh - 88px);
+  height: calc(100vh - 155px);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -7388,17 +7403,6 @@ footer {
   #home-page-container p {
     margin-bottom: 1rem;
     font-size: 2rem; }
-
-.et-tab-nav__link, .improv-combo-tab-nav__link {
-  color: #FFFFFF !important;
-  background-color: #00639E;
-  margin-right: 0.5rem;
-  font-weight: 700;
-  border-top-left-radius: 0.5rem !important;
-  border-top-right-radius: 0.5rem !important; }
-  .et-tab-nav__link.active, .improv-combo-tab-nav__link.active {
-    color: #00639E !important;
-    background-color: #FFFFFF; }
 
 .et-element-nav {
   font-weight: 700; }
@@ -7445,7 +7449,7 @@ footer {
 
 main > div.container {
   background-color: #FFFFFF;
-  min-height: calc(100vh - 170px); }
+  min-height: calc(100vh - 155px); }
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {

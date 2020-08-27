@@ -9,7 +9,7 @@
                 <ul class="nav nav-tabs">
                     {% for p in improv_type_pages %}
                     <li class="nav-item">
-                        <a class="nav-link{% if p.active %} active{% endif %}" href="{% if p.active %}#{% else %}{{ p.page.get_url }}{% endif %}">{{ p.page.title }}</a>
+                        <a class="improv-type-nav__link nav-link{% if p.active %} active{% endif %}" href="{% if p.active %}#{% else %}{{ p.page.get_url }}{% endif %}">{{ p.page.title }}</a>
                     </li>
                     {% endfor%}
                 </ul>
@@ -24,4 +24,3 @@
     </div>
 </div>
 {% endblock %}
-

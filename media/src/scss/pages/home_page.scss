@@ -4,7 +4,7 @@
 }
 
 .home-page-main {
-    height: calc(100vh - 88px);
+    height: calc(100vh - #{$footer-offset});
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;

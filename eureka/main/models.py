@@ -58,7 +58,10 @@ class HomePage(Page, MenuPageMixin):
 
 class BasicPage(Page, MenuPageMixin):
     body = StreamField([
-        ('rich_text', RichTextBlock()),
+        ('rich_text', RichTextBlock(features=[
+            'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic',
+            'ol', 'hr', 'link', 'document-link', 'image', 'embed'
+        ])),
         ('image', ImageBlock())
     ])
 
@@ -98,7 +101,10 @@ class ImprovisationTypeIndexPage(Page, MenuPageMixin):
 
 class ImprovisationTypePage(Page, MenuPageMixin):
     body = StreamField([
-        ('rich_text', RichTextBlock()),
+        ('rich_text', RichTextBlock(features=[
+            'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic',
+            'ol', 'hr', 'link', 'document-link', 'image', 'embed'
+        ])),
         ('image', ImageBlock())
     ])
 
@@ -138,7 +144,10 @@ class EarTrainingIndexPage(Page, MenuPageMixin):
 class EarTrainingLevelPage(Page, MenuPageMixin):
     tab_title = models.CharField(max_length=32)
     body = StreamField([
-        ('rich_text', RichTextBlock()),
+        ('rich_text', RichTextBlock(features=[
+            'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic',
+            'ol', 'hr', 'link', 'document-link', 'image', 'embed'
+        ])),
         ('image', ImageBlock())
     ])
 
@@ -186,7 +195,7 @@ class EarTrainingElementPage(Page, MenuPageMixin):
     body = StreamField([
         ('rich_text', RichTextBlock(
             features=[
-                'bold', 'italic', 'ol', 'ul',
+                'bold', 'italic', 'ol',
                 'hr', 'link', 'document_link'
             ]
         )),
@@ -235,7 +244,10 @@ class ImprovisationCombinationIndexPage(Page, MenuPageMixin):
 
 class ImprovisationCombinationPage(Page, MenuPageMixin):
     body = StreamField([
-        ('rich_text', RichTextBlock()),
+        ('rich_text', RichTextBlock(features=[
+            'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic',
+            'ol', 'hr', 'link', 'document-link', 'image', 'embed'
+        ])),
         ('table', TableBlock(template='main/blocks/table_block.html')),
         ('image', ImageBlock())
     ])
