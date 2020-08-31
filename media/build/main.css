@@ -7404,6 +7404,9 @@ footer {
     margin-bottom: 1rem;
     font-size: 2rem; }
 
+#basic-page h2, #basic-page h3 {
+  margin: 2rem 0 0.5rem; }
+
 .et-element-nav {
   font-weight: 700; }
 
