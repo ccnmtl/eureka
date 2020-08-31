@@ -60,7 +60,7 @@ class BasicPage(Page, MenuPageMixin):
     body = StreamField([
         ('rich_text', RichTextBlock(features=[
             'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic',
-            'ol', 'hr', 'link', 'document-link', 'image', 'embed'
+            'ol', 'ul', 'hr', 'link', 'document-link', 'image', 'embed'
         ])),
         ('image', ImageBlock())
     ])

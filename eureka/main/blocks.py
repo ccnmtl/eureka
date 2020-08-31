@@ -47,7 +47,8 @@ class EarTrainingElementBlock(StructBlock):
                     required=False
                 )),
                 ('image', ImageBlock(required=False)),
-                ('video', VideoEmbedBlock(required=False))
+                ('video', VideoEmbedBlock(required=False)),
+                ('table', TableBlock(template='main/blocks/table_block.html'))
             ], icon='cogs', required=False))
         ]),
         required=False

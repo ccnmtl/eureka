@@ -1,5 +1,6 @@
 {% load compress %}
 {% load wagtailuserbar %}
+{% load wagtailcore_tags%}
 {% load menu_tags %}
 
 <!doctype html>
@@ -79,6 +80,7 @@
                     <a href="https://ctl.columbia.edu">
                         <img src="{{ STATIC_URL }}img/ctl-logo-white.svg" alt="Center for Teaching and Learning, Columbia University"/>
                     </a>
+                    <a id="footer-login-link" href="/accounts/login/">Login</a>
                 </div>
             </div>
         </div>

@@ -7303,7 +7303,7 @@ a.text-dark:hover, a.text-dark:focus {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; }
 
-.serif, h1, h2, h3, h4, h5, h6, nav, .img-title, .navbar-brand, #home-page-container p {
+.serif, h1, h2, h3, h4, h5, h6, nav, .img-title, .navbar-brand, #home-page-container p, footer #footer-login-link {
   font-family: 'Roboto Slab', serif;
   font-weight: 700; }
 
@@ -7404,6 +7404,9 @@ footer {
     margin-bottom: 1rem;
     font-size: 2rem; }
 
+#basic-page h2, #basic-page h3 {
+  margin: 2rem 0 0.5rem; }
+
 .et-element-nav {
   font-weight: 700; }
 
@@ -7446,6 +7449,10 @@ footer {
   position: relative;
   width: 100%;
   bottom: 0; }
+  footer #footer-login-link {
+    color: #FFF;
+    display: block;
+    margin: 1rem 0 0 3rem; }
 
 main > div.container {
   background-color: #FFFFFF;

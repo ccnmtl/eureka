@@ -45,13 +45,13 @@
             {% for block in page.body %}
                 {% if block.value.title %}
                     <h2 id="{{ block.id }}">{{ block.value.title }}</h2>
+                {% endif %}
                     {% for el in block.value.musical_elements %}
+                        {% if el.element_title %}
                         <h3 id="{{ block.id }}-{{ forloop.counter }}">{{ el.element_title }}</h3>
+                        {% endif %}
                         {% include_block el.content %}
                     {% endfor %}
-                {% else %}
-                    {% include_block block %}
-                {% endif %}
             {% endfor %}
         </div>
         <div class="col-md-3">
