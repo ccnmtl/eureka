@@ -38,13 +38,6 @@ footer {
     position: relative;
     width: 100%;
     bottom: 0;
-
-    #footer-login-link {
-        color: #FFF;
-        @extend .serif;
-        display: block;
-        margin: 1rem 0 0 3rem;
-    }
 }
 
 main > div.container {
