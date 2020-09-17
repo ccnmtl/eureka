@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load wagtailcore_tags %}
+{% load contains_et_element %}
 
 {% block content %}
 <div class="container">
@@ -20,30 +21,36 @@
         <div class="col-md-9">
             <h1>{{ page.get_parent.title }}: {{ page.title }}</h1>
 
-            <hr/>
+            {% contains_et_element page.body as show_et_nav %}
+            {% if show_et_nav %}
+                <hr/>
+                <nav class="row et-element-nav">
 
-            <nav class="row et-element-nav">
                 {% for block in page.body %}
-                {% if block.value.title %}
-                <div class="col-md-4">
-                    <ul class="nav flex-column">
-                        <li class="nav-item et-element-nav__top-el"><a href="#{{ block.id }}">{{ block.value.title }}</a>
-                            <ul class="nav flex-column">
-                                {% for el in block.value.musical_elements %}
-                                <li class="nav-item et-element-nav__nested-el"><a href="#{{ block.id }}-{{ forloop.counter }}">{{ el.element_title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                {% endif %}
+                    {% if block.value.title %}
+                    <div class="col-md-4">
+                        <ul class="nav flex-column">
+                            <li class="nav-item et-element-nav__top-el"><a href="#{{ block.id }}">{{ block.value.title }}</a>
+                                <ul class="nav flex-column">
+                                    {% for el in block.value.musical_elements %}
+                                    <li class="nav-item et-element-nav__nested-el"><a href="#{{ block.id }}-{{ forloop.counter }}">{{ el.element_title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    {% endif %}
                 {% endfor %}
-            </nav>
 
-            <hr/>
+                </nav>
+                <hr/>
+            {% endif %}
 
             {% for block in page.body %}
-                {% if block.value.title %}
+                {% if not block.value.title %}
+                    {# this is standard text block #}
+                    {% include_block block %}
+                {% else %}
                     <h2 id="{{ block.id }}">{{ block.value.title }}</h2>
                 {% endif %}
                     {% for el in block.value.musical_elements %}
