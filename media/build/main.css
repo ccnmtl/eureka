@@ -7382,6 +7382,9 @@ footer {
     color: #00639E !important;
     background-color: #FFFFFF; }
 
+#bug-reporter:hover {
+  cursor: pointer; }
+
 .music-notation-streamfield {
   overflow-x: scroll; }
 

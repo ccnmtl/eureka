@@ -79,8 +79,8 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <span>© 2020 Peter M. Susser</span>
-                    <a id="footer-login-link" href="/accounts/login/">Login</a>
+                    <a href="/accounts/login/">Login</a>
+                    <div id="bug-reporter">Report a bug</div>
                 </div>
             </div>
         </div>
@@ -117,6 +117,19 @@
     </script> 
     <!-- End Google Analytics -->
     {% endif %} 
+
+    {# Jira bug reporter #}
+    <script type="text/javascript" src="https://columbiactl.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/vd1cif/b/24/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=0c66df02"></script>
+
+    <script type="text/javascript">window.ATL_JQ_PAGE_PROPS =  {
+        "triggerFunction": function(showCollectorDialog) {
+            //Requires that jQuery is available! 
+            jQuery("#bug-reporter").click(function(e) {
+                e.preventDefault();
+                showCollectorDialog();
+            });
+        }};
+    </script>
 
     <script src="{{STATIC_URL}}build/main.js"></script>
     {% if not debug %}
