@@ -27,7 +27,7 @@
                 <nav class="row et-element-nav">
 
                 {% for block in page.body %}
-                    {% if block.value.title %}
+                    {% if block.block_type == 'topic' %}
                     <div class="col-md-4">
                         <ul class="nav flex-column">
                             <li class="nav-item et-element-nav__top-el"><a href="#{{ block.id }}">{{ block.value.title }}</a>
@@ -47,19 +47,19 @@
             {% endif %}
 
             {% for block in page.body %}
-                {% if not block.value.title %}
-                    {# this is standard text block #}
+                {% if block.block_type == 'rich_text' %}
                     {% include_block block %}
-                {% else %}
+                {% elif block.block_type == 'topic' %}
                     <h2 id="{{ block.id }}">{{ block.value.title }}</h2>
-                {% endif %}
                     {% for el in block.value.musical_elements %}
                         {% if el.element_title %}
                         <h3 id="{{ block.id }}-{{ forloop.counter }}">{{ el.element_title }}</h3>
                         {% endif %}
                         {% include_block el.content %}
                     {% endfor %}
+                {% endif %}
             {% endfor %}
+
         </div>
         <div class="col-md-3">
             <nav class="et-sidebar-nav" aria-label="Ear training elements">
