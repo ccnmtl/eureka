@@ -1,7 +1,9 @@
 from django.http import Http404
 from django.db import models
 from django.shortcuts import redirect
-from eureka.main.blocks import EarTrainingElementBlock, ImageBlock
+from eureka.main.blocks import (
+    EarTrainingElementBlock, ImageBlock, AccessibleTextBlock
+)
 from wagtail.admin.edit_handlers import (
     StreamFieldPanel, FieldPanel, PageChooserPanel
 )
@@ -199,6 +201,7 @@ class EarTrainingElementPage(Page, MenuPageMixin):
                 'hr', 'link', 'document_link'
             ]
         )),
+        ('accessible_text', AccessibleTextBlock()),
         ('topic', EarTrainingElementBlock())
     ])
 

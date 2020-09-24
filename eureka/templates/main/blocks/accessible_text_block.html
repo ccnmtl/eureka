@@ -1,0 +1,9 @@
+{% load wagtailcore_tags %}
+
+<div aria-hidden="true">
+    {{ self.visible_text }}
+</div>
+
+<div class="sr-only">
+    {{ self.screen_reader_text }}
+</div>
