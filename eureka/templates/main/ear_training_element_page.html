@@ -49,6 +49,8 @@
             {% for block in page.body %}
                 {% if block.block_type == 'rich_text' %}
                     {% include_block block %}
+                {% elif block.block_type == 'accessible_text' %}
+                    {% include_block block %}
                 {% elif block.block_type == 'topic' %}
                     <h2 id="{{ block.id }}">{{ block.value.title }}</h2>
                     {% for el in block.value.musical_elements %}

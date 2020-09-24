@@ -33,6 +33,28 @@ class VideoEmbedBlock(StructBlock):
         template = "main/blocks/video_block.html"
 
 
+class AccessibleTextBlock(StructBlock):
+    visible_text = RichTextBlock(
+        features=[
+            'bold', 'italic', 'ol', 'ul',
+            'hr', 'link', 'document_link'
+        ],
+        icon='pilcrow',
+        label='Visible text'
+    )
+    screen_reader_text = RichTextBlock(
+        features=[
+            'ol', 'ul', 'link', 'document_link'
+        ],
+        icon='fa-universal-access',
+        label='Screen reader text'
+    )
+
+    class Meta:
+        icon = 'pilcrow'
+        template = "main/blocks/accessible_text_block.html"
+
+
 class EarTrainingElementBlock(StructBlock):
     title = CharBlock(required=False)
     musical_elements = ListBlock(
@@ -46,6 +68,12 @@ class EarTrainingElementBlock(StructBlock):
                     ],
                     required=False
                 )),
+                ('accessible_text', AccessibleTextBlock(required=False)),
+                ('sr_only_text', TextBlock(
+                    required=False,
+                    icon='fa-universal-access',
+                    label='SR text',
+                    template='main/blocks/screen_reader_block.html')),
                 ('image', ImageBlock(required=False)),
                 ('video', VideoEmbedBlock(required=False)),
                 ('table', TableBlock(template='main/blocks/table_block.html'))
@@ -68,7 +96,7 @@ class BaseStreamBlock(StreamBlock):
                         icon='fa-thumb-tack')
     table = TableBlock(template='main/blocks/table_block.html')
     sr_text = TextBlock(
-                        required=False,
-                        icon='fa-universal-access',
-                        label='SR text',
-                        template='main/blocks/screen_reader_block.html')
+        required=False,
+        icon='fa-universal-access',
+        label='SR text',
+        template='main/blocks/screen_reader_block.html')
