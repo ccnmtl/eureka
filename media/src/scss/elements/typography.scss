@@ -10,6 +10,11 @@
     font-weight: 700;
 }
 
+.serif-body {
+    @extend .serif;
+    font-weight: 400;
+}
+
 html {
     @extend .sans-serif;
 }
@@ -19,18 +24,20 @@ h1, h2, h3, h4, h5, h6, nav {
 }
 
 #maincontent {
+    @extend .serif-body;
+
     h1 {
         margin-bottom: 2rem;
     }
 
     h2 {
         font-size: 1.5rem;
-        margin: 2rem 0;
+        margin: 2rem 0 0.5rem;
     }
 
     h3 {
         font-size: 1.25rem;
-        margin: 2rem 0;
+        margin: 2rem 0 0.5rem;
     }
 }
 
