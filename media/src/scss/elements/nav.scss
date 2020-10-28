@@ -5,7 +5,7 @@ header, footer {
 footer {
     @extend .serif;
     padding: 1em 0;
-    //color: #FFF;
+    color: #FFF;
 
     .col-md-4:last-of-type > * {
         color: #FFF;
