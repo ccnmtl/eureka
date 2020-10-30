@@ -7344,7 +7344,8 @@ header, footer {
   background-color: #003655; }
 
 footer {
-  padding: 1em 0; }
+  padding: 1em 0;
+  color: #FFF; }
   footer .col-md-4:last-of-type > * {
     color: #FFF;
     display: block;
@@ -7396,7 +7397,7 @@ footer {
   background-size: cover; }
 
 .home-page-main {
-  height: calc(100vh - 155px);
+  height: calc(100vh - 185px);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -7462,7 +7463,7 @@ footer {
 
 main > div.container {
   background-color: #FFFFFF;
-  min-height: calc(100vh - 155px); }
+  min-height: calc(100vh - 185px); }
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {

@@ -2,7 +2,7 @@ from django.http import Http404
 from django.db import models
 from django.shortcuts import redirect
 from eureka.main.blocks import (
-    EarTrainingElementBlock, ImageBlock, AccessibleTextBlock
+    EarTrainingElementBlock, ImageBlock, AccessibleTextBlock, VideoEmbedBlock
 )
 from wagtail.admin.edit_handlers import (
     StreamFieldPanel, FieldPanel, PageChooserPanel
@@ -64,7 +64,8 @@ class BasicPage(Page, MenuPageMixin):
             'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic',
             'ol', 'ul', 'hr', 'link', 'document-link', 'image', 'embed'
         ])),
-        ('image', ImageBlock())
+        ('image', ImageBlock()),
+        ('video', VideoEmbedBlock(required=False))
     ])
 
     class Meta:
@@ -107,7 +108,8 @@ class ImprovisationTypePage(Page, MenuPageMixin):
             'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic',
             'ol', 'hr', 'link', 'document-link', 'image', 'embed'
         ])),
-        ('image', ImageBlock())
+        ('image', ImageBlock()),
+        ('video', VideoEmbedBlock(required=False))
     ])
 
     def get_context(self, request, *args, **kwargs):
@@ -150,7 +152,8 @@ class EarTrainingLevelPage(Page, MenuPageMixin):
             'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'bold', 'italic',
             'ol', 'hr', 'link', 'document-link', 'image', 'embed'
         ])),
-        ('image', ImageBlock())
+        ('image', ImageBlock()),
+        ('video', VideoEmbedBlock(required=False))
     ])
 
     def get_context(self, request, *args, **kwargs):
@@ -202,7 +205,8 @@ class EarTrainingElementPage(Page, MenuPageMixin):
             ]
         )),
         ('accessible_text', AccessibleTextBlock()),
-        ('topic', EarTrainingElementBlock())
+        ('topic', EarTrainingElementBlock()),
+        ('video', VideoEmbedBlock(required=False))
     ])
 
     def get_context(self, request, *args, **kwargs):
@@ -252,7 +256,8 @@ class ImprovisationCombinationPage(Page, MenuPageMixin):
             'ol', 'hr', 'link', 'document-link', 'image', 'embed'
         ])),
         ('table', TableBlock(template='main/blocks/table_block.html')),
-        ('image', ImageBlock())
+        ('image', ImageBlock()),
+        ('video', VideoEmbedBlock(required=False))
     ])
 
     def get_context(self, request, *args, **kwargs):
