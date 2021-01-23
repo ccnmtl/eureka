@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/ccnmtl/eureka/workflows/build-and-test/badge.svg)](https://github.com/ccnmtl/eureka/actions)
+
 # Eureka - Digital Guidebook for Improvisation in the Ear Training Classroom 
 ## Quick Start 
 Use `make dev`. This is equivalent to running Django's `./manage.py runserver` in one shell and Webpack in another. The output from both will be printed to the shell. Use CTR-C to exit.
