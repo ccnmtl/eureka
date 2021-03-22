@@ -15,7 +15,6 @@ PROJECT_APPS = [
 USE_TZ = True
 
 MIDDLEWARE += [  # noqa
-    'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
