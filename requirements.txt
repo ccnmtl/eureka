@@ -19,7 +19,7 @@ tornado==6.0.4
 # wagtail spec
 soupsieve==2.0.1
 cssselect==1.1.0
-lxml==4.6.2
+lxml==4.6.3
 fuzzywuzzy==0.18.0
 sure==1.4.11
 traitlets==4.3.3  # ipython
@@ -30,9 +30,9 @@ pyOpenSSL==19.1.0
 ndg-httpsclient==0.5.1
 # requests
 urllib3==1.25.9  # sentry-sdk
-chardet==3.0.4  # requests
+chardet==4.0.0  # requests
 idna==2.9  # requests
-certifi==2020.4.5.2  # requests, sentry-sdk
+certifi==2020.12.5  # requests, sentry-sdk
 
 logilab-common==1.6.3
 astroid==2.4.1
@@ -48,7 +48,7 @@ sqlparse==0.3.1
 s3transfer==0.3.3
 jmespath==0.10.0
 
-botocore>=1.15.0,<1.17.0
+botocore>=1.15.0,<1.21.0
 boto3>=1.12.0,<1.14.0
 
 python-dateutil==2.8.1
@@ -67,7 +67,7 @@ raven==6.10.0
 sentry-sdk==0.14.4
 django-bootstrap4==1.1.1
 django-debug-toolbar==2.2
-django-waffle==0.20.0
+django-waffle==2.1.0
 
 django-smoketest==1.1.2
 # For django-extensions
@@ -97,7 +97,7 @@ pylti==0.7.0
 django-lti-provider==0.4.0
 
 pbr==5.4.5 # bandit
-pyyaml==5.3.1 # bandit
+pyyaml==5.4 # bandit
 stevedore==1.32.0  # bandit
 bandit==1.6.2
 
