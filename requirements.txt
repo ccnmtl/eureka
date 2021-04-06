@@ -97,7 +97,7 @@ pylti==0.7.0
 django-lti-provider==0.4.0
 
 pbr==5.4.5 # bandit
-pyyaml==5.3.1 # bandit
+pyyaml==5.4.1 # bandit
 stevedore==1.32.0  # bandit
 bandit==1.6.2
 
