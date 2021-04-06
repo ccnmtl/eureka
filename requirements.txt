@@ -19,7 +19,7 @@ tornado==6.0.4
 # wagtail spec
 soupsieve==2.0.1
 cssselect==1.1.0
-lxml==4.6.2
+lxml==4.6.3
 fuzzywuzzy==0.18.0
 sure==1.4.11
 traitlets==4.3.3  # ipython
@@ -30,7 +30,7 @@ pyOpenSSL==19.1.0
 ndg-httpsclient==0.5.1
 # requests
 urllib3==1.25.9  # sentry-sdk
-chardet==3.0.4  # requests
+chardet==4.0.0  # requests
 idna==2.9  # requests
 certifi==2020.4.5.2  # requests, sentry-sdk
 
