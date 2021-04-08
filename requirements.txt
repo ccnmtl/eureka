@@ -23,7 +23,7 @@ lxml==4.6.3
 fuzzywuzzy==0.18.0
 sure==1.4.11
 traitlets==4.3.3  # ipython
-coverage==5.1
+coverage==5.5
 pyasn1==0.4.8
 cryptography==3.2  # pyOpenSSL
 pyOpenSSL==19.1.0
