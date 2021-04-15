@@ -1,7 +1,7 @@
 Django>=2.2.12,<3
 
 pytz==2020.1
-httplib2==0.19.0
+httplib2==0.19.1
 feedparser==5.2.1
 Markdown==3.2.2
 psycopg2==2.8.5
@@ -12,7 +12,7 @@ pyflakes==2.3.1
 mccabe==0.6.1
 configparser==5.0.0
 pycodestyle==2.6.0
-importlib-metadata==1.6.1  # for flake8
+importlib-metadata==2.1.1  # for flake8
 zipp==3.1.0  # for flake8
 flake8==3.9.0
 tornado==6.0.4
@@ -26,12 +26,12 @@ traitlets==4.3.3  # ipython
 coverage==5.5
 pyasn1==0.4.8
 cryptography==3.3.2  # pyOpenSSL
-pyOpenSSL==19.1.0
+pyOpenSSL==20.0.1
 ndg-httpsclient==0.5.1
 # requests
 urllib3==1.25.9  # sentry-sdk
 chardet==4.0.0  # requests
-idna==2.9  # requests
+idna==2.10  # requests
 certifi==2020.12.5  # requests, sentry-sdk
 
 logilab-common==1.6.3
@@ -102,7 +102,7 @@ stevedore==1.32.0  # bandit
 bandit==1.6.2
 
 django-smtp-ssl==1.0
-django-contact-us==0.4.3
+django-contact-us==0.4.4
 
 entrypoints==0.3
 
