@@ -27,7 +27,7 @@
   "devDependencies": {
     "autoprefixer": "^10.2.5",
     "axe-core": "^3.5.4",
-    "bootstrap": "~4.5.0",
+    "bootstrap": "~4.6.0",
     "css-loader": "^5.2.0",
     "cypress": "^4.7.0",
     "cypress-axe": "^0.12.2",
