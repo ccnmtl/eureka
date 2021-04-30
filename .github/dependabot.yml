@@ -1,0 +1,38 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  versioning-strategy: increase-if-necessary
+  ignore:
+  - dependency-name: css-loader
+    versions:
+    - 5.2.3
+  - dependency-name: webpack
+    versions:
+    - 5.35.0
+  - dependency-name: eslint
+    versions:
+    - 7.23.0
+  - dependency-name: npm
+    versions:
+    - 7.8.0
+  - dependency-name: bootstrap
+    versions:
+    - 4.6.0
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: s3transfer
+    versions:
+    - 0.3.7
+  - dependency-name: ccnmtlsettings
+    versions:
+    - 1.9.0
