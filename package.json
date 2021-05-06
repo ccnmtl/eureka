@@ -29,7 +29,7 @@
     "axe-core": "^4.1.4",
     "bootstrap": "~4.6.0",
     "css-loader": "^5.2.0",
-    "cypress": "^4.7.0",
+    "cypress": "^7.2.0",
     "cypress-axe": "^0.12.2",
     "eslint": "~7.25.0",
     "eslint-config-scanjs": "^1.0.0-beta4",
