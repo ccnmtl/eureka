@@ -2,7 +2,7 @@ from django.contrib.auth.models import User, Group
 import factory
 
 
-class UserFactory(factory.DjangoModelFactory):
+class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = User
     username = factory.Sequence(lambda n: 'user%d' % n)
@@ -10,6 +10,6 @@ class UserFactory(factory.DjangoModelFactory):
     email = factory.LazyAttribute(lambda u: '%s@example.com' % u.username)
 
 
-class GroupFactory(factory.DjangoModelFactory):
+class GroupFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Group
