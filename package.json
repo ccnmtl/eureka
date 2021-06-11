@@ -43,7 +43,7 @@
     "nodemon": "^2.0.4",
     "node-sass": "^6.0.0",
     "postcss-loader": "^6.1.0",
-    "sass-loader": "^11.0.1",
+    "sass-loader": "^12.1.0",
     "start-server-and-test": "^1.11.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.35.0",
