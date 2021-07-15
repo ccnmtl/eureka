@@ -28,7 +28,7 @@
     "autoprefixer": "^10.2.5",
     "axe-core": "^4.1.4",
     "bootstrap": "~4.6.0",
-    "css-loader": "^5.2.0",
+    "css-loader": "^6.0.0",
     "cypress": "^6.9.1",
     "cypress-axe": "^0.12.2",
     "eslint": "~7.30.0",
