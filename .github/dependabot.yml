@@ -8,6 +8,8 @@ updates:
   open-pull-requests-limit: 10
   versioning-strategy: increase-if-necessary
   ignore:
+  - dependency-name: "*"
+    update-types: ["version-update:semver-patch"]
   - dependency-name: css-loader
     versions:
     - 5.2.3
@@ -30,6 +32,8 @@ updates:
     time: "10:00"
   open-pull-requests-limit: 10
   ignore:
+  - dependency-name: "*"
+    update-types: ["version-update:semver-patch"]
   - dependency-name: s3transfer
     versions:
     - 0.3.7
