@@ -15,10 +15,12 @@ PROJECT_APPS = [
 USE_TZ = True
 
 MIDDLEWARE += [  # noqa
+    'django_cas_ng.middleware.CASMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 INSTALLED_APPS += [  # noqa
+    'django_cas_ng',
     'bootstrap4',
     'infranil',
     'django_extensions',
@@ -45,6 +47,17 @@ INSTALLED_APPS += [  # noqa
     'eureka.main',
 ]
 
+INSTALLED_APPS.remove('djangowind') # noqa
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'django_cas_ng.backends.CASBackend'
+]
+
+CAS_SERVER_URL = 'https://cas.columbia.edu/cas/'
+CAS_VERSION = '3'
+CAS_ADMIN_REDIRECT = False
+
 # Customized from CCNMTL Common
 TEMPLATES = [
     {
@@ -62,7 +75,6 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
-                'djangowind.context.context_processor',
                 'stagingcontext.staging_processor',
                 'gacontext.ga_processor',
                 'wagtail.contrib.settings.context_processors.settings',
@@ -80,10 +92,6 @@ WAGTAIL_SITE_NAME = 'Eureka'
 WAGTAIL_FRONTEND_LOGIN_URL = '/accounts/login/'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
-WIND_AFFIL_HANDLERS = ['eureka.main.auth.WagtailEditorMapper',
-                       'djangowind.auth.StaffMapper',
-                       'djangowind.auth.SuperuserMapper']
 
 WAGTAILADMIN_STATIC_FILE_VERSION_STRINGS = True
 

@@ -1,10 +1,9 @@
 from django.conf import settings
 from django.contrib import admin
-from django.contrib.auth import logout
 from django.urls import include, path, re_path
-from django.conf.urls import url
 from django.views.generic import TemplateView
 from django.views.static import serve
+from django_cas_ng import views as cas_views
 import os.path
 from eureka.main.views import S3DocumentServe
 from wagtail.admin import urls as wagtailadmin_urls
@@ -13,25 +12,13 @@ from wagtail.core import urls as wagtail_urls
 
 site_media_root = os.path.join(os.path.dirname(__file__), "../media")
 
-
-redirect_after_cms_logout = getattr(settings, 'LOGOUT_REDIRECT_URL', None)
-auth_urls = url(r'^accounts/', include('django.contrib.auth.urls'))
-logout_cms_page = path(
-    'accounts/logout/',
-    logout,
-    {'next_page': redirect_after_cms_logout})
-if hasattr(settings, 'CAS_BASE'):
-    from djangowind.views import logout as windlogout
-    auth_urls = url(r'^accounts/', include('djangowind.urls'))
-    logout_cms_page = path(
-        'accounts/logout/',
-        windlogout,
-        {'next_page': redirect_after_cms_logout})
-
-
 urlpatterns = [
-    auth_urls,
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('cas/login', cas_views.LoginView.as_view(),
+         name='cas_ng_login'),
+    path('cas/logout', cas_views.LogoutView.as_view(),
+         name='cas_ng_logout'),
     path('stats/', TemplateView.as_view(template_name="stats.html")),
     path('smoketest/', include('smoketest.urls')),
     path('infranil/', include('infranil.urls')),
