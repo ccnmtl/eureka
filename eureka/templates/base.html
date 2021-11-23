@@ -79,7 +79,11 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="/accounts/login/">Login</a>
+                    {% if user.is_anonymous %}
+                        <a href="/accounts/login/">Login</a>
+                    {% else %}
+                        <a href="/accounts/logout/?next=/">Logout</a>
+                    {% endif %}
                     <div id="bug-reporter">Report a bug</div>
                 </div>
             </div>
@@ -90,7 +94,7 @@
             </div>
         </div>
     </footer>
-    
+
     <nav aria-label="Wagtail User Menu">
     {% wagtailuserbar %}
     </nav>
