@@ -1,4 +1,4 @@
-Django>=2.2.12,<3
+Django==3.2.12
 
 pytz==2022.1
 httplib2==0.20.2
@@ -108,7 +108,7 @@ entrypoints==0.4
 
 # wagtail requirements
 wagtail<2.14
-django-modelcluster>=5.0.1,<6.0 
+django-modelcluster>=5.0.1,<6.0
 django-taggit>=1.2.0,<3.0
 django-treebeard>=4.2.0,<5.0,!=4.5
 djangorestframework>=3.11.1,<4.0
@@ -133,3 +133,4 @@ django-cogwheels==0.3
 
 python-cas==1.6.0
 requirements/src/django_cas_ng-4.2.2ctl-py2.py3-none-any.whl
+asgiref==3.4.1
