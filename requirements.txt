@@ -94,7 +94,7 @@ nameparser==1.1.0
 oauth2==1.9.0.post1
 oauthlib==3.2.0
 pylti==0.7.0
-django-lti-provider==0.4.7
+django-lti-provider==1.0.0
 
 pbr==5.8.0 # bandit
 pyyaml==6.0 # bandit
