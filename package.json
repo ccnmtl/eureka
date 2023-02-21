@@ -8,9 +8,9 @@
     "build": "webpack",
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
-    "cypress:test": "start-server-and-test 'make integrationserver' http-get://localhost:8000 cypress:run",
-    "integrationserver:webpack": "start-server-and-test 'make integrationserver' http-get://localhost:8000 dev",
-    "cypress:watch": "start-server-and-test integrationserver:webpack http-get://localhost:8000 cypress:open"
+    "cypress:test": "start-server-and-test 'make integrationserver' http://127.0.0.1:8000 cypress:run",
+    "integrationserver:webpack": "start-server-and-test 'make integrationserver' http://127.0.0.1:8000 dev",
+    "cypress:watch": "start-server-and-test integrationserver:webpack http://127.0.0.1:8000 cypress:open"
   },
   "repository": {
     "type": "git",
