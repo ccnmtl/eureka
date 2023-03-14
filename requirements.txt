@@ -18,6 +18,7 @@ zipp==3.15.0  # for flake8
 flake8==6.0.0
 tornado==6.2
 # wagtail spec
+openpyxl==3.1.2
 soupsieve==2.4
 cssselect==1.2.0
 lxml==4.9.1
@@ -106,7 +107,7 @@ django-contact-us==1.1.0
 entrypoints==0.4
 
 # wagtail requirements
-wagtail==4.0.4
+wagtail==4.2.1
 django-modelcluster>=6.0,<7.0
 django-permissionedforms>=0.1,<1.0
 django-taggit>=2.0,<4.0
