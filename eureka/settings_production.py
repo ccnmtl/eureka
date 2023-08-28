@@ -1,3 +1,4 @@
+import sys
 from eureka.settings_shared import *  # noqa f403
 from ccnmtlsettings.production import common
 from django.conf import settings
@@ -28,7 +29,9 @@ try:
 except ImportError:
     pass
 
-if hasattr(settings, 'SENTRY_DSN'):
+if ('migrate' not in sys.argv) and \
+   ('collectstatic' not in sys.argv) and \
+   hasattr(settings, 'SENTRY_DSN'):
     sentry_sdk.init(
         dsn=SENTRY_DSN,  # noqa f405
         integrations=[DjangoIntegration()],
