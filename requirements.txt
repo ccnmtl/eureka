@@ -134,5 +134,5 @@ wagtailmenus==3.1.2
 django-cogwheels==0.3
 
 python-cas==1.6.0
-django-cas-ng==4.3.0
+django-cas-ng==5.0.0
 asgiref==3.7.1
