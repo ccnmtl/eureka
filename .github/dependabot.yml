@@ -37,6 +37,6 @@ updates:
   - dependency-name: s3transfer
     versions:
     - 0.3.7
-  - dependency-name: ccnmtlsettings
+  - dependency-name: ctlsettings
     versions:
-    - 1.9.0
+    - 0.3.0

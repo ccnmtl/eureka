@@ -1,7 +1,7 @@
 # Django settings for the Eureka project.
 import os.path
 import sys
-from ccnmtlsettings.shared import common
+from ctlsettings.shared import common
 
 project = 'eureka'
 base = os.path.dirname(__file__)
@@ -20,7 +20,6 @@ MIDDLEWARE += [  # noqa
 ]
 
 INSTALLED_APPS += [  # noqa
-    'django_cas_ng',
     'bootstrap4',
     'infranil',
     'django_extensions',
@@ -46,8 +45,6 @@ INSTALLED_APPS += [  # noqa
 
     'eureka.main',
 ]
-
-INSTALLED_APPS.remove('djangowind')  # noqa
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

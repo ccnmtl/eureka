@@ -1,6 +1,6 @@
 import sys
 from eureka.settings_shared import *  # noqa f403
-from ccnmtlsettings.production import common
+from ctlsettings.production import common
 from django.conf import settings
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
