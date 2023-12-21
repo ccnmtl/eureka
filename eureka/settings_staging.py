@@ -11,6 +11,7 @@ locals().update(
         base=base,  # noqa f405
         STATIC_ROOT=STATIC_ROOT,  # noqa f405
         INSTALLED_APPS=INSTALLED_APPS,  # noqa f405
+        s3prefix="ccnmtl",
     ))
 
 DATABASES = {
