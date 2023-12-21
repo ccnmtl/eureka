@@ -1,4 +1,3 @@
-{% load compress %}
 {% load wagtailuserbar %}
 {% load wagtailcore_tags%}
 {% load menu_tags %}
@@ -15,10 +14,8 @@
     <!-- CSS for cookie policy -->
     <link rel="stylesheet" href="https://search.sites.columbia.edu/cu-privacy-notice/cu-privacy-notice.css" />
     <!-- Project CSS -->
-    {% compress css %}
     <link rel="stylesheet" href="{{ STATIC_URL }}build/main.css">
     {% block css %}{% endblock %}
-    {% endcompress %}
 
     <!-- CSS for cookie policy -->
 
