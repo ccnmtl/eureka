@@ -128,4 +128,4 @@ django-cogwheels==0.3
 
 python-cas==1.6.0
 django-cas-ng==5.0.1
-asgiref==3.7.1
+asgiref==3.8.0
