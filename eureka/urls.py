@@ -21,7 +21,6 @@ urlpatterns = [
          name='cas_ng_logout'),
     path('stats/', TemplateView.as_view(template_name="stats.html")),
     path('smoketest/', include('smoketest.urls')),
-    path('infranil/', include('infranil.urls')),
     re_path(r'^uploads/(?P<path>.*)$',
             serve, {'document_root': settings.MEDIA_ROOT}),
     re_path(r'^cms/', include(wagtailadmin_urls)),
