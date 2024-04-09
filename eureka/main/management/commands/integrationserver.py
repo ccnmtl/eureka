@@ -7,7 +7,7 @@ class Command(BaseCommand):
     """Build out the basic site tree"""
     help = 'Runs a development server with data created by factories.'
 
-    requires_system_checks = False
+    requires_system_checks = []
 
     def add_arguments(self, parser):
         parser.add_argument(
