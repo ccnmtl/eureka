@@ -26,7 +26,7 @@ sure==2.0.0
 traitlets<6.0.0  # ipython
 coverage==7.6.0
 pyasn1==0.6.0
-cffi==1.16.0 # cryptography
+cffi==1.17.0 # cryptography
 cryptography==43.0.0  # pyOpenSSL
 pyOpenSSL==24.2.1
 ndg-httpsclient==0.5.1
