@@ -99,7 +99,7 @@ django-contact-us==1.1.0
 entrypoints==0.4
 
 # wagtail requirements
-wagtail==4.0.4
+wagtail==6.2.2
 django-modelcluster>=6.0,<7.0
 django-permissionedforms>=0.1,<1.0
 django-taggit>=5.0.1,<7.0
