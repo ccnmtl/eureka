@@ -1,6 +1,6 @@
 from eureka.settings_shared import *  # noqa f403
-from ctlsettings.production import common
-from django.conf import settings, init_sentry
+from ctlsettings.production import common, init_sentry
+from django.conf import settings
 
 locals().update(
     common(
