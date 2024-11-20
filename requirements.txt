@@ -89,7 +89,7 @@ django-lti-provider==1.0.0
 
 pbr==6.1.0 # bandit
 pyyaml==6.0.2 # bandit
-stevedore==5.3.0  # bandit
+stevedore==5.4.0  # bandit
 bandit==1.7.1
 
 django-smtp-ssl==1.0
