@@ -39,7 +39,7 @@
     "jsdom": "~26.1.0",
     "json-stable-stringify-without-jsonify": "^1.0.1",
     "mini-css-extract-plugin": "^2.1.0",
-    "mocha": "~11.3.0",
+    "mocha": "~11.4.0",
     "node-sass": "^9.0.0",
     "nodemon": "^3.0.1",
     "postcss-loader": "^8.0.0",
