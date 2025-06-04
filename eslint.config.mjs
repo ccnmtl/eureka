@@ -1,5 +1,5 @@
 import security from "eslint-plugin-security";
-import cypress from "eslint-plugin-cypress";
+import pluginCypress from "eslint-plugin-cypress"
 import globals from "globals";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -20,7 +20,7 @@ export default [
     {
         plugins: {
             security,
-            cypress,
+            pluginCypress,
         },
 
         languageOptions: {
@@ -28,7 +28,6 @@ export default [
                 ...globals.browser,
                 ...globals.amd,
                 ...globals.jquery,
-                ...cypress.environments.globals.globals,
                 ...globals.es2015
             },
 
