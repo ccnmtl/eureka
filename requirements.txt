@@ -89,7 +89,7 @@ django-lti-provider==1.0.0
 
 pbr==7.0.0 # bandit
 pyyaml==6.0.2 # bandit
-stevedore==5.4.0  # bandit
+stevedore==5.5.0  # bandit
 rich==14.1.0
 bandit==1.8.3
 
