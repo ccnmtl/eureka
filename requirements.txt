@@ -127,5 +127,5 @@ django-cogwheels==0.3
 
 python-cas==1.6.0
 django-cas-ng==5.0.1
-asgiref==3.9.1
+asgiref==3.10.0
 backports.zoneinfo;python_version<"3.9"
