@@ -17,11 +17,13 @@ USE_TZ = True
 MIDDLEWARE += [  # noqa
     'django_cas_ng.middleware.CASMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 INSTALLED_APPS += [  # noqa
     'bootstrap4',
     'django_extensions',
+    'debug_toolbar',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
