@@ -64,8 +64,6 @@ django-bootstrap4==25.3
 django-debug-toolbar==5.2.0
 
 django-smoketest==1.2.0
-# For django-extensions
-typing==3.7.4.1; python_version < '3.5'
 django-extensions==4.1
 django-stagingcontext==0.1.0
 django-ga-context==0.1.0
@@ -127,4 +125,3 @@ django-cogwheels==0.3
 python-cas==1.7.1
 django-cas-ng==5.1.0
 asgiref==3.11.0
-backports.zoneinfo;python_version<"3.9"
