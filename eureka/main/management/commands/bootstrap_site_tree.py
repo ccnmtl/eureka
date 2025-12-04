@@ -42,8 +42,10 @@ def create_ear_training_elements(et_root_page, element_list):
                             ('rich_text', RichTextBlock()),
                         ]),
                         stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
+                            {'type': 'rich_text',
+                             'value': '<p>TBD</p>'},
+                        ],
+                        is_lazy=True
                     )
                 }, {
                     'element_title': 'Intermediate',
@@ -52,8 +54,10 @@ def create_ear_training_elements(et_root_page, element_list):
                             ('rich_text', RichTextBlock()),
                         ]),
                         stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
+                            {'type': 'rich_text',
+                             'value': '<p>TBD</p>'},
+                        ],
+                        is_lazy=True
                     )
                 }, {
                     'element_title': 'Advanced',
@@ -62,8 +66,10 @@ def create_ear_training_elements(et_root_page, element_list):
                             ('rich_text', RichTextBlock()),
                         ]),
                         stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
+                            {'type': 'rich_text',
+                             'value': '<p>TBD</p>'},
+                        ],
+                        is_lazy=True
                     )
                 }]
             }), ('topic', {
@@ -75,8 +81,10 @@ def create_ear_training_elements(et_root_page, element_list):
                             ('rich_text', RichTextBlock()),
                         ]),
                         stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
+                            {'type': 'rich_text',
+                             'value': '<p>TBD</p>'},
+                        ],
+                        is_lazy=True
                     )
                 }, {
                     'element_title': 'Intermediate',
@@ -85,8 +93,10 @@ def create_ear_training_elements(et_root_page, element_list):
                             ('rich_text', RichTextBlock()),
                         ]),
                         stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
+                            {'type': 'rich_text',
+                             'value': '<p>TBD</p>'},
+                        ],
+                        is_lazy=True
                     )
                 }, {
                     'element_title': 'Advanced',
@@ -95,8 +105,10 @@ def create_ear_training_elements(et_root_page, element_list):
                             ('rich_text', RichTextBlock()),
                         ]),
                         stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
+                            {'type': 'rich_text',
+                             'value': '<p>TBD</p>'},
+                        ],
+                        is_lazy=True
                     )
                 }]
             })]
@@ -179,12 +191,19 @@ class Command(BaseCommand):
                         ('video', VideoEmbedBlock()),
                     ]),
                     stream_data=[
-                        ('rich_text', RichText('<p>TBD</p>')),
-                        ('video', {
-                            'url': YT_TEST_VIDEO,
-                            'description': 'A very fine video'
-                        }),
-                    ]
+                        {
+                            'type': 'rich_text',
+                            'value': '<p>TBD</p>'
+                        },
+                        {
+                            'type': 'video',
+                            'value': {
+                                'url': YT_TEST_VIDEO,
+                                'description': 'A very fine video'
+                            }
+                        },
+                    ],
+                    is_lazy=True
                 )
             }]
         })]
