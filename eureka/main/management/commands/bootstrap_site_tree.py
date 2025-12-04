@@ -1,16 +1,13 @@
 from django.core.management.base import (
     BaseCommand, CommandError
 )
-from eureka.main.blocks import VideoEmbedBlock
 from eureka.main.models import (
     HomePage, ImprovisationTypeIndexPage, ImprovisationTypePage,
     EarTrainingIndexPage, EarTrainingLevelPage,
     EarTrainingElementContainerPage, EarTrainingElementPage,
     ImprovisationCombinationIndexPage, ImprovisationCombinationPage
 )
-from wagtail.core.blocks import StreamBlock, StreamValue, RichTextBlock
 from wagtail.core.models import Page, Site
-from wagtail.core.rich_text import RichText
 from wagtailmenus.conf import settings
 
 IMPROV_TYPE_LIST = [
@@ -33,73 +30,70 @@ def create_ear_training_elements(et_root_page, element_list):
             imp_type_page = EarTrainingElementPage(
                 title=improv_type
             )
-            imp_type_page.body = [('topic', {
-                'title': 'Out of Tempo',
-                'musical_elements': [{
-                    'element_title': 'Beginner',
-                    'content': StreamValue(
-                        stream_block=StreamBlock([
-                            ('rich_text', RichTextBlock()),
-                        ]),
-                        stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
-                    )
-                }, {
-                    'element_title': 'Intermediate',
-                    'content': StreamValue(
-                        stream_block=StreamBlock([
-                            ('rich_text', RichTextBlock()),
-                        ]),
-                        stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
-                    )
-                }, {
-                    'element_title': 'Advanced',
-                    'content': StreamValue(
-                        stream_block=StreamBlock([
-                            ('rich_text', RichTextBlock()),
-                        ]),
-                        stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
-                    )
-                }]
-            }), ('topic', {
-                'title': 'In Tempo',
-                'musical_elements': [{
-                    'element_title': 'Beginner',
-                    'content': StreamValue(
-                        stream_block=StreamBlock([
-                            ('rich_text', RichTextBlock()),
-                        ]),
-                        stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
-                    )
-                }, {
-                    'element_title': 'Intermediate',
-                    'content': StreamValue(
-                        stream_block=StreamBlock([
-                            ('rich_text', RichTextBlock()),
-                        ]),
-                        stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
-                    )
-                }, {
-                    'element_title': 'Advanced',
-                    'content': StreamValue(
-                        stream_block=StreamBlock([
-                            ('rich_text', RichTextBlock()),
-                        ]),
-                        stream_data=[
-                            ('rich_text', RichText('<p>TBD</p>')),
-                        ]
-                    )
-                }]
-            })]
+            imp_type_page.body = [
+                {
+                    'type': 'topic',
+                    'value': {
+                        'title': 'Out of Tempo',
+                        'musical_elements': [{
+                            'element_title': 'Beginner',
+                            'content': [
+                                {
+                                    'type': 'rich_text',
+                                    'value': '<p>TBD</p>'
+                                }
+                            ]
+                        }, {
+                            'element_title': 'Intermediate',
+                            'content': [
+                                {
+                                    'type': 'rich_text',
+                                    'value': '<p>TBD</p>'
+                                }
+                            ]
+                        }, {
+                            'element_title': 'Advanced',
+                            'content': [
+                                {
+                                    'type': 'rich_text',
+                                    'value': '<p>TBD</p>'
+                                }
+                            ]
+                        }]
+                    }
+                },
+                {
+                    'type': 'topic',
+                    'value': {
+                        'title': 'In Tempo',
+                        'musical_elements': [{
+                            'element_title': 'Beginner',
+                            'content': [
+                                {
+                                    'type': 'rich_text',
+                                    'value': '<p>TBD</p>'
+                                }
+                            ]
+                        }, {
+                            'element_title': 'Intermediate',
+                            'content': [
+                                {
+                                    'type': 'rich_text',
+                                    'value': '<p>TBD</p>'
+                                }
+                            ]
+                        }, {
+                            'element_title': 'Advanced',
+                            'content': [
+                                {
+                                    'type': 'rich_text',
+                                    'value': '<p>TBD</p>'
+                                }
+                            ]
+                        }]
+                    }
+                }
+            ]
             element_container.add_child(instance=imp_type_page)
             imp_type_page.save_revision().publish()
 
@@ -137,7 +131,10 @@ class Command(BaseCommand):
         for improv_type in IMPROV_TYPE_LIST:
             improv_type_page = ImprovisationTypePage(
                 title=improv_type,
-                body=[('rich_text', RichText('<p>TBD</p>'))]
+                body=[{
+                    'type': 'rich_text',
+                    'value': '<p>TBD</p>'
+                }]
             )
             improv_type_index.add_child(instance=improv_type_page)
             improv_type_page.save_revision().publish()
@@ -155,7 +152,10 @@ class Command(BaseCommand):
             title='Introduction to Ear Training One',
             tab_title='Ear Training One',
             show_in_menus=True,
-            body=[('rich_text', RichText('<p>TBD</p>'))]
+            body=[{
+                'type': 'rich_text',
+                'value': '<p>TBD</p>'
+            }]
         )
         ear_training_index.add_child(instance=et_one)
         et_one.save_revision().publish()
@@ -173,19 +173,19 @@ class Command(BaseCommand):
             'title': 'Out of tempo',
             'musical_elements': [{
                 'element_title': 'Out of tempo with intervals',
-                'content': StreamValue(
-                    stream_block=StreamBlock([
-                        ('rich_text', RichTextBlock()),
-                        ('video', VideoEmbedBlock()),
-                    ]),
-                    stream_data=[
-                        ('rich_text', RichText('<p>TBD</p>')),
-                        ('video', {
+                'content': [
+                    {
+                        'type': 'rich_text',
+                        'value': '<p>TBD</p>'
+                    },
+                    {
+                        'type': 'video',
+                        'value': {
                             'url': YT_TEST_VIDEO,
                             'description': 'A very fine video'
-                        }),
-                    ]
-                )
+                        }
+                    }
+                ]
             }]
         })]
         et_page.save_revision().publish()
@@ -195,7 +195,10 @@ class Command(BaseCommand):
             title='Introduction to Ear Training Two',
             tab_title='Ear Training Two',
             show_in_menus=True,
-            body=[('rich_text', RichText('<p>TBD</p>'))]
+            body=[{
+                'type': 'rich_text',
+                'value': '<p>TBD</p>'
+            }]
         )
         ear_training_index.add_child(instance=et_two)
         et_two.save_revision().publish()
@@ -212,7 +215,10 @@ class Command(BaseCommand):
             title='Introduction to Ear Training Three',
             tab_title='Ear Training Three',
             show_in_menus=True,
-            body=[('rich_text', RichText('<p>TBD</p>'))]
+            body=[{
+                'type': 'rich_text',
+                'value': '<p>TBD</p>'
+            }]
         )
         ear_training_index.add_child(instance=et_three)
         et_three.save_revision().publish()
@@ -229,7 +235,10 @@ class Command(BaseCommand):
             title='Introduction to Ear Training Four',
             tab_title='Ear Training Four',
             show_in_menus=True,
-            body=[('rich_text', RichText('<p>TBD</p>'))]
+            body=[{
+                'type': 'rich_text',
+                'value': '<p>TBD</p>'
+            }]
         )
         ear_training_index.add_child(instance=et_four)
         et_four.save_revision().publish()
@@ -255,7 +264,10 @@ class Command(BaseCommand):
             combo_page = ImprovisationCombinationPage(
                 title=i,
                 show_in_menus=True,
-                body=[('rich_text', RichText('<p>TBD</p>'))]
+                body=[{
+                    'type': 'rich_text',
+                    'value': '<p>TBD</p>'
+                }]
             )
             improv_combo_index.add_child(instance=combo_page)
             combo_page.save_revision().publish()
