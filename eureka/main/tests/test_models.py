@@ -2,10 +2,10 @@ from eureka.main.models import (
     EarTrainingElementContainerPage, EarTrainingLevelPage,
     EarTrainingElementPage, pack_nav_pages
 )
-from wagtail.tests.utils import WagtailPageTests
+from wagtail.tests.utils import WagtailPageTestCase
 
 
-class PageTest(WagtailPageTests):
+class PageTest(WagtailPageTestCase):
     def test_ear_training_element_container_page(self):
         """Test that requests to an ear training container page
         redirect to its first child"""

@@ -4,10 +4,10 @@ from eureka.main.models import (
     EarTrainingElementPage, ImprovisationCombinationIndexPage,
     ImprovisationCombinationPage
 )
-from wagtail.tests.utils import WagtailPageTests
+from wagtail.tests.utils import WagtailPageTestCase
 
 
-class ViewTest(WagtailPageTests):
+class ViewTest(WagtailPageTestCase):
     """These test check that the page can be routed and can
     render templates cleanly"""
     def test_smoketest(self):
