@@ -4,15 +4,12 @@ from django.shortcuts import redirect
 from eureka.main.blocks import (
     EarTrainingElementBlock, ImageBlock, AccessibleTextBlock, VideoEmbedBlock
 )
-from wagtail.admin.edit_handlers import (
-    StreamFieldPanel, FieldPanel, PageChooserPanel
-)
+from wagtail.admin.panels import FieldPanel, PageChooserPanel
+
 from wagtail.contrib.table_block.blocks import TableBlock
-from wagtail.core.blocks import (
-    RichTextBlock
-)
-from wagtail.core.fields import StreamField
-from wagtail.core.models import Page
+from wagtail.blocks import RichTextBlock
+from wagtail.fields import StreamField
+from wagtail.models import Page
 from wagtailmenus.models import MenuPageMixin
 from wagtailmenus.panels import menupage_panel
 
@@ -36,7 +33,7 @@ def pack_nav_pages(page_list, active_page):
 
 class HomePage(Page, MenuPageMixin):
     home_page_link = models.ForeignKey(
-        'wagtailcore.Page',
+        Page,
         on_delete=models.SET_NULL,
         related_name='+',
         null=True,
@@ -54,7 +51,7 @@ class HomePage(Page, MenuPageMixin):
         menupage_panel
     ]
 
-    parent_page_types = ['wagtailcore.Page']
+    parent_page_types = [Page]
     max_count = 1
 
 
@@ -66,13 +63,13 @@ class BasicPage(Page, MenuPageMixin):
         ])),
         ('image', ImageBlock()),
         ('video', VideoEmbedBlock(required=False))
-    ])
+    ], use_json_field=True)
 
     class Meta:
         verbose_name = "Basic Page"
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body')
+        FieldPanel('body')
     ]
 
     settings_panels = Page.settings_panels + [
@@ -110,7 +107,7 @@ class ImprovisationTypePage(Page, MenuPageMixin):
         ])),
         ('image', ImageBlock()),
         ('video', VideoEmbedBlock(required=False))
-    ])
+    ], use_json_field=True)
 
     def get_context(self, request, *args, **kwargs):
         ctx = super().get_context(request, *args, **kwargs)
@@ -122,7 +119,7 @@ class ImprovisationTypePage(Page, MenuPageMixin):
         verbose_name = "Improvisation Type Page"
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body')
+        FieldPanel('body')
     ]
 
     settings_panels = Page.settings_panels + [
@@ -154,7 +151,7 @@ class EarTrainingLevelPage(Page, MenuPageMixin):
         ])),
         ('image', ImageBlock()),
         ('video', VideoEmbedBlock(required=False))
-    ])
+    ], use_json_field=True)
 
     def get_context(self, request, *args, **kwargs):
         ctx = super().get_context(request, *args, **kwargs)
@@ -167,7 +164,7 @@ class EarTrainingLevelPage(Page, MenuPageMixin):
 
     content_panels = Page.content_panels + [
         FieldPanel('tab_title'),
-        StreamFieldPanel('body')
+        FieldPanel('body')
     ]
 
     settings_panels = Page.settings_panels + [
@@ -207,7 +204,7 @@ class EarTrainingElementPage(Page, MenuPageMixin):
         ('accessible_text', AccessibleTextBlock()),
         ('topic', EarTrainingElementBlock()),
         ('video', VideoEmbedBlock(required=False))
-    ])
+    ], use_json_field=True)
 
     def get_context(self, request, *args, **kwargs):
         ctx = super().get_context(request, *args, **kwargs)
@@ -226,7 +223,7 @@ class EarTrainingElementPage(Page, MenuPageMixin):
         verbose_name = "Ear Training Element Page"
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body')
+        FieldPanel('body')
     ]
 
     settings_panels = Page.settings_panels + [
@@ -258,7 +255,7 @@ class ImprovisationCombinationPage(Page, MenuPageMixin):
         ('table', TableBlock(template='main/blocks/table_block.html')),
         ('image', ImageBlock()),
         ('video', VideoEmbedBlock(required=False))
-    ])
+    ], use_json_field=True)
 
     def get_context(self, request, *args, **kwargs):
         ctx = super().get_context(request, *args, **kwargs)
@@ -270,7 +267,7 @@ class ImprovisationCombinationPage(Page, MenuPageMixin):
         verbose_name = "Improvisation Combination Page"
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body')
+        FieldPanel('body')
     ]
 
     settings_panels = Page.settings_panels + [

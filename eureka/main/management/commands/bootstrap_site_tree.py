@@ -8,9 +8,9 @@ from eureka.main.models import (
     EarTrainingElementContainerPage, EarTrainingElementPage,
     ImprovisationCombinationIndexPage, ImprovisationCombinationPage
 )
-from wagtail.core.blocks import StreamBlock, StreamValue, RichTextBlock
-from wagtail.core.models import Page, Site
-from wagtail.core.rich_text import RichText
+from wagtail.blocks import StreamBlock, StreamValue, RichTextBlock
+from wagtail.models import Page, Site
+from wagtail.rich_text import RichText
 from wagtailmenus.conf import settings
 
 IMPROV_TYPE_LIST = [

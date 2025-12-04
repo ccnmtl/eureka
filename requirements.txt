@@ -1,5 +1,4 @@
-Django>=4.2.14,<5
-
+Django>=5.2,<6
 pytz==2025.2
 httplib2==0.31.0
 feedparser==6.0.8
@@ -22,7 +21,7 @@ soupsieve==2.8
 cssselect==1.3.0
 lxml==6.0.0
 fuzzywuzzy==0.18.0
-sure==2.0.0
+sure==3.0a2
 traitlets<6.0.0  # ipython
 pyasn1==0.6.0
 cffi==2.0.0 # cryptography
@@ -73,9 +72,9 @@ django-impersonate==1.9.1
 django-markwhat==2025.5.31
 gunicorn==23.0.0
 django-flatblocks==1.0.0
-django-storages==1.14.2
+django-storages==1.14.6
 
-ctlsettings==0.4.2
+ctlsettings==0.4.5
 django-reversion==6.0.0
 text_unidecode==1.3
 
@@ -98,7 +97,7 @@ django-contact-us==1.1.0
 entrypoints==0.4
 
 # wagtail requirements
-wagtail==4.0.4
+wagtail==6.4.2
 django-modelcluster>=6.0,<7.0
 django-permissionedforms>=0.1,<1.0
 django-taggit>=5.0.1,<7.0
@@ -118,13 +117,16 @@ xlsxwriter>=1.2.8,<4.0
 tablib[xls,xlsx]>=0.14.0
 anyascii>=0.1.5
 telepath>=0.1.1,<1
+openpyxl==3.1.5
+django-tasks==0.10.0
+django-stubs-ext==5.2.8
+laces==0.1.2
+modelsearch==1.1.1
 
 # wagtail additions
-wagtailfontawesome==1.2.1
-wagtailmenus==3.1.2
+wagtailmenus==4.0.5
 django-cogwheels==0.3
 
 python-cas==1.7.1
 django-cas-ng==5.1.0
 asgiref==3.11.0
-backports.zoneinfo;python_version<"3.9"
