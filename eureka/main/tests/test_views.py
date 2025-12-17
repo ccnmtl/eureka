@@ -1,15 +1,23 @@
+from django.core.management import call_command
+from django.test.utils import override_settings
 from eureka.main.models import (
     HomePage, ImprovisationTypeIndexPage, ImprovisationTypePage,
     EarTrainingIndexPage, EarTrainingLevelPage,
     EarTrainingElementPage, ImprovisationCombinationIndexPage,
     ImprovisationCombinationPage
 )
-from wagtail.tests.utils import WagtailPageTests
+from wagtail.tests.utils import WagtailPageTestCase
 
 
-class ViewTest(WagtailPageTests):
+@override_settings(DEBUG=False)
+class ViewTest(WagtailPageTestCase):
     """These test check that the page can be routed and can
     render templates cleanly"""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command('bootstrap_site_tree')
+
     def test_smoketest(self):
         response = self.client.get('/smoketest/')
         self.assertEqual(response.status_code, 200)

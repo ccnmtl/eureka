@@ -85,8 +85,6 @@ WAGTAILADMIN_STATIC_FILE_VERSION_STRINGS = True
 
 WAGTAILMENUS_ACTIVE_ANCESTOR_CLASS = 'active'
 
-# Set custom test runner
-TEST_RUNNER = 'eureka.main.tests.runner.EurekaTestRunner'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Needed to get Cypress to run
