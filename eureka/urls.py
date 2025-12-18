@@ -8,7 +8,7 @@ import os.path
 from eureka.main.views import S3DocumentServe
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
-from wagtail.core import urls as wagtail_urls
+from wagtail import urls as wagtail_urls
 
 site_media_root = os.path.join(os.path.dirname(__file__), "../media")
 
