@@ -22,7 +22,6 @@ soupsieve==2.8
 cssselect==1.3.0
 lxml==6.0.0
 fuzzywuzzy==0.18.0
-sure==3.0a2
 traitlets<6.0.0  # ipython
 pyasn1==0.6.0
 cffi==2.0.0 # cryptography
