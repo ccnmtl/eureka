@@ -1,5 +1,5 @@
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.core.blocks import (
+from wagtail.blocks import (
     CharBlock, TextBlock, RichTextBlock, StructBlock, StreamBlock, ListBlock,
     URLBlock
 )
