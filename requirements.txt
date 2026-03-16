@@ -26,7 +26,7 @@ traitlets<6.0.0  # ipython
 pyasn1==0.6.0
 cffi==2.0.0 # cryptography
 cryptography==46.0.5  # pyOpenSSL
-pyOpenSSL==25.3.0
+pyOpenSSL==26.0.0
 ndg-httpsclient==0.5.1
 # requests
 urllib3==2.6.3  # sentry-sdk
