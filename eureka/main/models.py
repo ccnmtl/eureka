@@ -4,13 +4,13 @@ from django.shortcuts import redirect
 from eureka.main.blocks import (
     EarTrainingElementBlock, ImageBlock, AccessibleTextBlock, VideoEmbedBlock
 )
-from wagtail.admin.edit_handlers import FieldPanel, PageChooserPanel
+from wagtail.admin.panels import FieldPanel, PageChooserPanel
 from wagtail.contrib.table_block.blocks import TableBlock
-from wagtail.core.blocks import (
+from wagtail.blocks import (
     RichTextBlock
 )
-from wagtail.core.fields import StreamField
-from wagtail.core.models import Page
+from wagtail.fields import StreamField
+from wagtail.models import Page
 from wagtailmenus.models import MenuPageMixin
 from wagtailmenus.panels import menupage_panel
 
