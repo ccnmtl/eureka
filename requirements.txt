@@ -20,7 +20,7 @@ tornado==6.5.5
 # wagtail spec
 soupsieve==2.8
 cssselect==1.4.0
-lxml==6.0.0
+lxml==6.1.0
 fuzzywuzzy==0.18.0
 traitlets<6.0.0  # ipython
 pyasn1==0.6.3
