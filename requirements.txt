@@ -23,7 +23,7 @@ cssselect==1.4.0
 lxml==6.1.0
 fuzzywuzzy==0.18.0
 traitlets<6.0.0  # ipython
-pyasn1==0.6.3
+pyasn1==0.6.4
 cffi==2.1.0 # cryptography
 cryptography==49.0.0  # pyOpenSSL
 pyOpenSSL==26.3.0
