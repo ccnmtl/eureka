@@ -113,7 +113,7 @@ defusedxml==0.7.1 # willow
 requests>=2.34.0,<3.0
 l18n>=2021.3
 xlsxwriter>=3.2.9,<4.0
-tablib[xls,xlsx]>=3.9.0
+tablib[xls,xlsx]>=3.10.0
 anyascii>=0.3.3
 telepath>=0.3.1,<1
 
