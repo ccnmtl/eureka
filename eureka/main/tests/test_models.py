@@ -4,7 +4,7 @@ from eureka.main.models import (
     EarTrainingElementContainerPage, EarTrainingLevelPage,
     EarTrainingElementPage, pack_nav_pages
 )
-from wagtail.tests.utils import WagtailPageTestCase
+from wagtail.test.utils import WagtailPageTestCase
 
 
 @override_settings(DEBUG=False)

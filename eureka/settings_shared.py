@@ -39,7 +39,6 @@ INSTALLED_APPS += [  # noqa
     'wagtail',
     'modelcluster',
     'taggit',
-    'wagtailfontawesome',
     'wagtailmenus',
 
     'eureka.main',
