@@ -1,5 +1,5 @@
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.core.blocks import (
+from wagtail.blocks import (
     CharBlock, TextBlock, RichTextBlock, StructBlock, StreamBlock, ListBlock,
     URLBlock
 )
@@ -46,7 +46,7 @@ class AccessibleTextBlock(StructBlock):
         features=[
             'ol', 'ul', 'link', 'document_link'
         ],
-        icon='fa-universal-access',
+        icon='no-view',
         label='Screen reader text'
     )
 
@@ -71,7 +71,7 @@ class EarTrainingElementBlock(StructBlock):
                 ('accessible_text', AccessibleTextBlock(required=False)),
                 ('sr_only_text', TextBlock(
                     required=False,
-                    icon='fa-universal-access',
+                    icon='no-view',
                     label='SR text',
                     template='main/blocks/screen_reader_block.html')),
                 ('image', ImageBlock(required=False)),
@@ -93,10 +93,10 @@ class BaseStreamBlock(StreamBlock):
     table_caption = CharBlock(
                         required=False,
                         help_text='Table caption',
-                        icon='fa-thumb-tack')
+                        icon='thumbtack')
     table = TableBlock(template='main/blocks/table_block.html')
     sr_text = TextBlock(
         required=False,
-        icon='fa-universal-access',
+        icon='no-view',
         label='SR text',
         template='main/blocks/screen_reader_block.html')
