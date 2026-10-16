@@ -1,4 +1,4 @@
-Django>=4.2.14,<5
+Django>=6.1.2,<7
 
 pytz==2026.5
 httplib2==0.32.0
